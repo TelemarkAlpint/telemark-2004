@@ -44,7 +44,7 @@ switch( $a ):
 	if ($navn != "" && $newBody != "" )
 		writeEntry( $a );
 
-    header("Location: http://www.ntnui.no/telemark/Guestbook/guestbook.php3");
+    header("Location: /Guestbook/guestbook.php3");
     exit;
   }
 
