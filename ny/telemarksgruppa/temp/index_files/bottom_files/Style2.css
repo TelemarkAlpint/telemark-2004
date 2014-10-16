@@ -1,0 +1,18 @@
+BODY {
+	COLOR: #ffffff
+}
+A:link {
+	COLOR: #ffffff
+}
+A:visited {
+	COLOR: #ffffff
+}
+A:active {
+	COLOR: #ffffff
+}
+A:hover {
+	COLOR: #ffcccc
+}
+A {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}

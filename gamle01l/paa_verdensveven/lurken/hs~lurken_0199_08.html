@@ -1,0 +1,266 @@
+<HTML>
+<HEAD>
+   
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   
+<TITLE>Lurken 01 - 1999</TITLE>
+<link rel="stylesheet" type="text/css" href="telemarkgruppa.css">
+
+<SCRIPT LANGUAGE = "JavaScript" >
+<!--
+var JS_Enabled = false;
+
+if (navigator != null) {
+    var Browser = navigator.appName + " " + navigator.appVersion;
+    var nn = Browser.substring(9, 12);
+    var ms = Browser.substring(50, 53);
+    if (Browser.substring(0, 8) == "Netscape")
+        if (nn >= 3)
+            JS_Enabled = true;
+    if (Browser.substring(0, 9) == "Microsoft")
+        if (ms >= 4)
+            JS_Enabled = true;
+}
+
+//-----------------------------------------------------
+
+if (JS_Enabled) {
+    var JSE_Ready = false;
+    var JSE_NrImgs = 0;
+    var JSE_Imgs = null;
+    var JSE_ImgsIdx = 0;
+    var JSE_SwEval = " ";
+    var JSE_SwImg = " ";
+    var JSE_TimeOut = null;
+}
+
+function JSE_Init(NrImgs) {
+    if (JS_Enabled) {
+        JSE_Imgs = new Array(NrImgs);
+        JSE_NrImgs = NrImgs;
+        JSE_ImgsIdx = 0;
+        JSE_SwEval = null;
+        JSE_SwImg = null;
+    }
+}
+
+//-----------------------------------------------------
+
+function nr2Str(Nr, Sz) {
+    if (JS_Enabled) {
+        var Str = Nr.toString();
+        while (Str.length < Sz)
+            Str = "0" + Str;
+        return Str;
+    }
+}
+
+//-----------------------------------------------------
+
+function ImgEntry(ImgStr, Name) {
+    if (JS_Enabled) {
+        this.Img = new Image();
+        this.Img.src = ImgStr;
+        this.Name = Name;
+    }
+}
+
+//-----------------------------------------------------
+// JSE_preLdImgs("BASE=meny/;NAME=meny_;EXT=.jpg;SKEME=14:1;START=0000;");
+// skeme supports only :??:?? and START isn't implemented yet..
+
+function JSE_preLdImgs(ParamStr) {
+    if (JS_Enabled) {
+        Params = ParamStr.split(";");
+        var Base  = "";
+        var Name  = null;
+        var Ext   = "";
+        var Skeme = null;
+        var Start = null;
+        for (i = 0; i < Params.length; i++) {
+            if (Params[i].substring(0, 5) == "BASE=" ) Base  = Params[i].substring(5);
+            if (Params[i].substring(0, 5) == "NAME=" ) Name  = Params[i].substring(5);
+            if (Params[i].substring(0, 4) == "EXT="  ) Ext   = Params[i].substring(4);
+            if (Params[i].substring(0, 6) == "SKEME=") Skeme = Params[i].substring(6);
+            if (Params[i].substring(0, 6) == "START=") Start = Params[i].substring(6);
+        }
+        if (Skeme == null) {
+            alert("JSE: Error in parameters to JSE_preLdImgs! - check document!");
+            return;
+        } else {
+            var TheSkeme = Skeme.split(":");
+            var Cnt1 = parseInt(TheSkeme[0]);
+            var Cnt2 = parseInt(TheSkeme[1]);
+            for (Idx1 = 0; Idx1 < Cnt1; Idx1++) {
+                for (Idx2 = 0; Idx2 < Cnt2; Idx2++) {
+                    NrStr = (nr2Str(Idx1, 2) + nr2Str(Idx2, 2));
+                    if (JSE_ImgsIdx >= JSE_NrImgs) {
+                        alert("JSE: Error: Too many images (define more space in JSE_Init!).");
+                        return;
+                    }
+                    ImgStr = (Base + Name + NrStr + Ext);
+                    JSE_Imgs[JSE_ImgsIdx] = new ImgEntry(ImgStr, (Name + NrStr));
+                    JSE_ImgsIdx++;
+                }
+            }
+        }
+    }
+}
+
+//-----------------------------------------------------
+// I1 = document image IDX or NAME (html tag)
+// I2 = preloaded image NAME to change to
+
+function JSE_chImgPN(I1, I2) {
+    if (JS_Enabled) {
+        if (JSE_Imgs != null) {
+            for (var Idx = 0; Idx < JSE_NrImgs; Idx++) {
+                if (JSE_Imgs[Idx] == null) {
+                    alert("Image named \"" + I2 + "\" is spelled wrong or not preloaded!");
+                    return;
+                }
+                if (JSE_Imgs[Idx].Name == I2) {
+                    if (JSE_Imgs[Idx].Img != null)
+                        document.images[I1].src = JSE_Imgs[Idx].Img.src;
+                    return;
+                }
+            }
+        }
+    }
+}
+
+
+//-----------------------------------------------------
+// I1 = document image IDX or NAME (html tag)
+// I2 = preloaded image NAME to change to (if not switched "on")
+
+function JSE_chSwImgPN(I1, I2) {
+    if (JS_Enabled)
+			  if (JSE_Ready)
+	        if ((JSE_SwImg == null) || (JSE_SwImg != I1))
+	            JSE_chImgPN(I1, I2);
+}
+
+//-----------------------------------------------------
+// I1 = document image NAME (tag)
+// I2 = preloaded image NAME to change to now
+// I3 = preloaded image NAME to change back to when function is called again..
+
+function JSE_swImgPN(I1, I2, I3) {
+    if (JS_Enabled)
+		    if (JSE_Ready) {
+            if (JSE_SwEval != null)
+                eval(JSE_SwEval);
+            JSE_SwEval = "JSE_chImgPN(\"" + I1 + "\", \"" + I3 + "\");";
+            JSE_SwImg = I1;
+            JSE_chImgPN(I1, I2);
+	}
+}
+
+if (JS_Enabled) {
+    JSE_Init(15);
+    JSE_preLdImgs('BASE=;NAME=lurken;EXT=.gif;SKEME=4:3;START=0000;');
+    JSE_Ready = true;
+}
+//-->
+</SCRIPT>	
+
+</HEAD>
+
+<body bgcolor="#758DB8" > 
+
+<table width="90%" border="0" align="center"  CELLSPACING=0 CELLPADDING=0>    
+<TR width="100%">
+<TD valign="bottom">
+
+<h3>Hva skal skje i telemarkgruppa i år?</h3>
+
+Telemarkgruppa har selvfølgelig en hel masse arrangementer for skikåte mennesker:
+<br><br>
+
+<b>Åre-tur</b><br>
+Søndag den 30 Januar år 2000, tidlig om morgenen drar en hel haug med
+glade telemarkskjørere fra NTNUI telemark til ÅRE.
+<br><br> 
+
+
+
+</td>
+<td align="right">
+<div align="right">
+
+<IMG SRC="lurken0000.gif" NAME="lurken0000" BORDER=0 ><br><A 
+
+HREF="lurken_0199_07.html" onMouseOver = "JSE_chSwImgPN('lurken0100', 'lurken0101');" onMouseOut  = "JSE_chSwImgPN('lurken0100', 'lurken0100');" onClick     = "JSE_swImgPN(  'lurken0100', 'lurken0101', 'lurken0100');"><IMG SRC="lurken0100.gif" NAME="lurken0100" BORDER=0></A><A 
+HREF="lurken_0199.html" onMouseOver = "JSE_chSwImgPN('lurken0200', 'lurken0201');" onMouseOut  = "JSE_chSwImgPN('lurken0200', 'lurken0200');" onClick     = "JSE_swImgPN(  'lurken0200', 'lurken0201', 'lurken0200');"><IMG SRC="lurken0200.gif" NAME="lurken0200" BORDER=0></A><A 
+HREF="lurken_0199_09.html" onMouseOver = "JSE_chSwImgPN('lurken0300', 'lurken0301');" onMouseOut  = "JSE_chSwImgPN('lurken0300', 'lurken0300');" onClick     = "JSE_swImgPN(  'lurken0300', 'lurken0301', 'lurken0300');"><IMG SRC="lurken0300.gif" NAME="lurken0300" BORDER=0></A>
+
+</div>
+
+</td>
+</tr>
+
+</table>
+<table width="90%" border="0" align="center"  CELLSPACING=0 CELLPADDING=0>    
+
+<TR width="100%">
+
+<TD>
+
+Tro mig, du ønsker ikke høre om hva vi vart med om når vi kommer hjem på
+torsdagskvelden den 3 februar, du vil vite!!!!!!!!!!!
+<br><br>
+Åre er nordeuropas største ski anlegg. Det ligger to timers kjøring rett
+østerut - i Sverige. Under uke 3,4 og 5 hvert år arrangeres Apple ski week
+då hele hotellkapasiteten på sirka 25 000 mennsker fylles med glade
+studenter fra hele norden. (se mer på <a href="http://www.areresort.se"> http://www.areresort.se</A>) 
+<br><br>
+Boende er allerede klart, mitt i sentrum mellom systembolaget, heisene og
+barene. Heiskort, reise og boende koster 1300 kronor!!!!!!!!!!!!!
+<br><br>
+<img src="aare01.jpg" align="right" BORDER="1" hspace=5 vspace=5>
+Du kan allerede nå sikre dig en plass gjennom at betale:
+<br><br>
+
+        Beløp:  1300 NOK  (+ avbestillingsskydd 50 NOK)<br><br>
+        
+        <b>konto:</b><br>  
+		4200.38.55702<br>
+      <b>navn:</b><br> 
+		telemarktur<br>
+        Nikolas Fahlskog<br>
+        Rogertsg. 1<br>
+        7016 Trondheim<br><br>
+
+- BETAL MED GIRO -<br>
+- SPAR KVITTERINGEN -<br>
+<br>
+Send mail til: 
+<br>
+<a href="mailto:fahlskog@stud.ntnu.no">FAHLSKOG@STUD.NTNU.NO</a> 
+<br>
+- n&aring;r du har betalt -
+<br><br>
+Betalning gjelder som bindende påmelding.  Avbestilling (rekommenderes) 
+skyddet gjelder hvis du blir syk, eller av annen spesiell grunn ikke kan
+reise (kreves intyg av lege eller lignende).  Hvis du av annen grunn ikke
+kan/vill bli med kan man selge billetten sin til noen annen i gruppa så
+lenge man gir beskjed til mig.
+<br><br>
+Betalingsfristen har jag ikke fått enda, men regner med at den blir en
+gang i mitten av oktober. Tenk på at det er UKA og du ska ju likevel med
+på turen så det er like bra at betale med en gang. 
+<br><br>
+
+
+NTNUI telemark på tur i ÅRE - dette blir bra - hur bra som helst.<br><br>
+
+Hilsen Nicholas
+<br><br><br>
+
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

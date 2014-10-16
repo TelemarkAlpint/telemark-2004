@@ -1,0 +1,231 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<TITLE>Lurken 01 - 1999</TITLE>
+<link rel="stylesheet" type="text/css" href="telemarkgruppa.css">
+
+<SCRIPT LANGUAGE = "JavaScript">
+
+
+<!--
+
+var JS_Enabled = false;
+
+if (navigator != null) {
+    var Browser = navigator.appName + " " + navigator.appVersion;
+    var nn = Browser.substring(9, 12);
+    var ms = Browser.substring(50, 53);
+    if (Browser.substring(0, 8) == "Netscape")
+        if (nn >= 3)
+            JS_Enabled = true;
+    if (Browser.substring(0, 9) == "Microsoft")
+        if (ms >= 4)
+            JS_Enabled = true;
+}
+
+//-----------------------------------------------------
+
+if (JS_Enabled) {
+    var JSE_Ready = false;
+    var JSE_NrImgs = 0;
+    var JSE_Imgs = null;
+    var JSE_ImgsIdx = 0;
+    var JSE_SwEval = " ";
+    var JSE_SwImg = " ";
+    var JSE_TimeOut = null;
+}
+
+function JSE_Init(NrImgs) {
+    if (JS_Enabled) {
+        JSE_Imgs = new Array(NrImgs);
+        JSE_NrImgs = NrImgs;
+        JSE_ImgsIdx = 0;
+        JSE_SwEval = null;
+        JSE_SwImg = null;
+    }
+}
+
+//-----------------------------------------------------
+function nr2Str(Nr, Sz) {
+    if (JS_Enabled) {
+        var Str = Nr.toString();
+        while (Str.length < Sz)
+            Str = "0" + Str;
+        return Str;
+    }
+}
+
+//-----------------------------------------------------
+function ImgEntry(ImgStr, Name) {
+    if (JS_Enabled) {
+        this.Img = new Image();
+        this.Img.src = ImgStr;
+        this.Name = Name;
+    }
+}
+
+//-----------------------------------------------------
+// JSE_preLdImgs("BASE=meny/;NAME=meny_;EXT=.jpg;SKEME=14:1;START=0000;");
+// skeme supports only :??:?? and START isn't implemented yet..
+
+function JSE_preLdImgs(ParamStr) {
+    if (JS_Enabled) {
+        Params = ParamStr.split(";");
+        var Base  = "";
+        var Name  = null;
+        var Ext   = "";
+        var Skeme = null;
+        var Start = null;
+        for (i = 0; i < Params.length; i++) {
+            if (Params[i].substring(0, 5) == "BASE=" ) Base  = Params[i].substring(5);
+            if (Params[i].substring(0, 5) == "NAME=" ) Name  = Params[i].substring(5);
+            if (Params[i].substring(0, 4) == "EXT="  ) Ext   = Params[i].substring(4);
+            if (Params[i].substring(0, 6) == "SKEME=") Skeme = Params[i].substring(6);
+            if (Params[i].substring(0, 6) == "START=") Start = Params[i].substring(6);
+        }
+        if (Skeme == null) {
+            alert("JSE: Error in parameters to JSE_preLdImgs! - check document!");
+            return;
+        } else {
+            var TheSkeme = Skeme.split(":");
+            var Cnt1 = parseInt(TheSkeme[0]);
+            var Cnt2 = parseInt(TheSkeme[1]);
+            for (Idx1 = 0; Idx1 < Cnt1; Idx1++) {
+                for (Idx2 = 0; Idx2 < Cnt2; Idx2++) {
+                    NrStr = (nr2Str(Idx1, 2) + nr2Str(Idx2, 2));
+                    if (JSE_ImgsIdx >= JSE_NrImgs) {
+                        alert("JSE: Error: Too many images (define more space in JSE_Init!).");
+                        return;
+                    }
+                    ImgStr = (Base + Name + NrStr + Ext);
+                    JSE_Imgs[JSE_ImgsIdx] = new ImgEntry(ImgStr, (Name + NrStr));
+                    JSE_ImgsIdx++;
+                }
+            }
+        }
+    }
+}
+
+//-----------------------------------------------------
+// I1 = document image IDX or NAME (html tag)
+// I2 = preloaded image NAME to change to
+
+function JSE_chImgPN(I1, I2) {
+    if (JS_Enabled) {
+        if (JSE_Imgs != null) {
+            for (var Idx = 0; Idx < JSE_NrImgs; Idx++) {
+                if (JSE_Imgs[Idx] == null) {
+                    alert("Image named \"" + I2 + "\" is spelled wrong or not preloaded!");
+                    return;
+                }
+                if (JSE_Imgs[Idx].Name == I2) {
+                    if (JSE_Imgs[Idx].Img != null)
+                        document.images[I1].src = JSE_Imgs[Idx].Img.src;
+                    return;
+                }
+            }
+        }
+    }
+}
+
+
+//-----------------------------------------------------
+// I1 = document image IDX or NAME (html tag)
+// I2 = preloaded image NAME to change to (if not switched "on")
+
+function JSE_chSwImgPN(I1, I2) {
+    if (JS_Enabled)
+			  if (JSE_Ready)
+	        if ((JSE_SwImg == null) || (JSE_SwImg != I1))
+	            JSE_chImgPN(I1, I2);
+}
+
+//-----------------------------------------------------
+// I1 = document image NAME (tag)
+// I2 = preloaded image NAME to change to now
+// I3 = preloaded image NAME to change back to when function is called again..
+
+function JSE_swImgPN(I1, I2, I3) {
+    if (JS_Enabled)
+		    if (JSE_Ready) {
+            if (JSE_SwEval != null)
+                eval(JSE_SwEval);
+            JSE_SwEval = "JSE_chImgPN(\"" + I1 + "\", \"" + I3 + "\");";
+            JSE_SwImg = I1;
+            JSE_chImgPN(I1, I2);
+        }
+}
+
+if (JS_Enabled) {
+    JSE_Init(15);
+    JSE_preLdImgs('BASE=;NAME=lurken;EXT=.gif;SKEME=4:3;START=0000;');
+    JSE_Ready = true;
+}
+		
+//-->
+</SCRIPT>	
+	
+	
+
+</HEAD>
+
+<body bgcolor="#758DB8" > 
+
+<table width="90%" border="0" align="center"  CELLSPACING=0 CELLPADDING=0>    
+<TR width="100%">
+<TD valign="bottom">
+
+
+
+<b>Skifestivalen 2000</b><br>
+
+Skifestivalen er et tradisjonsrikt arrangement i regi av Telemarkgruppa. 
+<br><br>
+
+
+</td>
+<td align="right">
+<div align="right">
+
+<IMG SRC="lurken0000.gif" NAME="lurken0000" BORDER=0 ><br><A 
+
+HREF="lurken_0199_09.html" onMouseOver = "JSE_chSwImgPN('lurken0100', 'lurken0101');" onMouseOut  = "JSE_chSwImgPN('lurken0100', 'lurken0100');" onClick     = "JSE_swImgPN(  'lurken0100', 'lurken0101', 'lurken0100');"><IMG SRC="lurken0100.gif" NAME="lurken0100" BORDER=0></A><A 
+HREF="lurken_0199.html" onMouseOver = "JSE_chSwImgPN('lurken0200', 'lurken0201');" onMouseOut  = "JSE_chSwImgPN('lurken0200', 'lurken0200');" onClick     = "JSE_swImgPN(  'lurken0200', 'lurken0201', 'lurken0200');"><IMG SRC="lurken0200.gif" NAME="lurken0200" BORDER=0></A><A 
+HREF="lurken_0199_11.html" onMouseOver = "JSE_chSwImgPN('lurken0300', 'lurken0301');" onMouseOut  = "JSE_chSwImgPN('lurken0300', 'lurken0300');" onClick     = "JSE_swImgPN(  'lurken0300', 'lurken0301', 'lurken0300');"><IMG SRC="lurken0300.gif" NAME="lurken0300" BORDER=0></A>
+
+</div>
+
+</td>
+</tr>
+
+</table>
+<table width="90%" border="0" align="center"  CELLSPACING=0 CELLPADDING=0>    
+
+<TR width="100%">
+
+<TD>
+Arrangementet er like gammelt som gruppa, årets arrangement er derfor det 14. i rekken. Skifestivalen er det naturlige høydepunktet for alle arrangementene til Telemarkgruppa.
+<br><br>
+Etter fjorårets arrangement føler vi at grunnlaget er lagt for å få med enda flere folk på skikjøring og festing. Årets arrangement legges til helgen 3 - 5. mars i Gråkallen. Det kommer helt sikkert til å bli noen forandringer i forhold til fjorårets Skifestival, dette er dog opptil det nye styret.  Det som er helt sikkert er at det kommer til å bli gøy!
+<br><br>
+Skifestivalgeneral Line Woxen og styret hennes har mange spennende oppgaver å løse fremover som de kommer til å trenge en del flere frivillige til å være med på. Du har derfor også en mulighet til å delta aktivt i Skifestivalen!
+<br><br>
+Jeg ønsker med dette Skifestivalen 2000 lykke til med planlegging og gjennomføring av arrangementet! 
+<br><br>
+
+Henrik L. Langum<br>
+Ex-general<br>
+På vegne av Skifestivalstyret 1999<br>
+
+<br><br><br>
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+</BODY>
+</HTML>

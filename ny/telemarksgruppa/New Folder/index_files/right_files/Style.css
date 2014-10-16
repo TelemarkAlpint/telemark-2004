@@ -1,0 +1,18 @@
+A:link {
+	COLOR: rgb(255,0,0)
+}
+A:visited {
+	COLOR: rgb(255,0,0)
+}
+A:active {
+	COLOR: rgb(255,0,0)
+}
+A:hover {
+	COLOR: #ff9999
+}
+A {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+BODY {
+	COLOR: rgb(98,82,82)
+}

@@ -1,0 +1,28 @@
+a:link
+{
+	color: rgb(255,0,0); 
+}
+a:visited
+{
+	color: rgb(255,0,0); 
+} 
+a:active 
+{
+	color: rgb(255,0,0);
+}
+a:hover
+{
+	color: rgb(255,0,0);
+	text-decoration: underline & overline;
+}
+a
+{
+	font-size: 8pt;
+	font-weight: bold;
+	font-family: Arial;
+	text-decoration: none;
+}
+body
+{
+	color: rgb(98,82,82);
+}

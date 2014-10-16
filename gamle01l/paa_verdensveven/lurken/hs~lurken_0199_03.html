@@ -1,0 +1,282 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<TITLE>Lurken 01 - 1999</TITLE>
+<link rel="stylesheet" type="text/css" href="telemarkgruppa.css">
+
+<SCRIPT LANGUAGE = "JavaScript">
+
+
+<!--
+
+var JS_Enabled = false;
+
+if (navigator != null) {
+    var Browser = navigator.appName + " " + navigator.appVersion;
+    var nn = Browser.substring(9, 12);
+    var ms = Browser.substring(50, 53);
+    if (Browser.substring(0, 8) == "Netscape")
+        if (nn >= 3)
+            JS_Enabled = true;
+    if (Browser.substring(0, 9) == "Microsoft")
+        if (ms >= 4)
+            JS_Enabled = true;
+}
+
+//-----------------------------------------------------
+
+if (JS_Enabled) {
+    var JSE_Ready = false;
+    var JSE_NrImgs = 0;
+    var JSE_Imgs = null;
+    var JSE_ImgsIdx = 0;
+    var JSE_SwEval = " ";
+    var JSE_SwImg = " ";
+    var JSE_TimeOut = null;
+}
+
+function JSE_Init(NrImgs) {
+    if (JS_Enabled) {
+        JSE_Imgs = new Array(NrImgs);
+        JSE_NrImgs = NrImgs;
+        JSE_ImgsIdx = 0;
+        JSE_SwEval = null;
+        JSE_SwImg = null;
+    }
+}
+
+//-----------------------------------------------------
+function nr2Str(Nr, Sz) {
+    if (JS_Enabled) {
+        var Str = Nr.toString();
+        while (Str.length < Sz)
+            Str = "0" + Str;
+        return Str;
+    }
+}
+
+//-----------------------------------------------------
+function ImgEntry(ImgStr, Name) {
+    if (JS_Enabled) {
+        this.Img = new Image();
+        this.Img.src = ImgStr;
+        this.Name = Name;
+    }
+}
+
+//-----------------------------------------------------
+// JSE_preLdImgs("BASE=meny/;NAME=meny_;EXT=.jpg;SKEME=14:1;START=0000;");
+// skeme supports only :??:?? and START isn't implemented yet..
+
+function JSE_preLdImgs(ParamStr) {
+    if (JS_Enabled) {
+        Params = ParamStr.split(";");
+        var Base  = "";
+        var Name  = null;
+        var Ext   = "";
+        var Skeme = null;
+        var Start = null;
+        for (i = 0; i < Params.length; i++) {
+            if (Params[i].substring(0, 5) == "BASE=" ) Base  = Params[i].substring(5);
+            if (Params[i].substring(0, 5) == "NAME=" ) Name  = Params[i].substring(5);
+            if (Params[i].substring(0, 4) == "EXT="  ) Ext   = Params[i].substring(4);
+            if (Params[i].substring(0, 6) == "SKEME=") Skeme = Params[i].substring(6);
+            if (Params[i].substring(0, 6) == "START=") Start = Params[i].substring(6);
+        }
+        if (Skeme == null) {
+            alert("JSE: Error in parameters to JSE_preLdImgs! - check document!");
+            return;
+        } else {
+            var TheSkeme = Skeme.split(":");
+            var Cnt1 = parseInt(TheSkeme[0]);
+            var Cnt2 = parseInt(TheSkeme[1]);
+            for (Idx1 = 0; Idx1 < Cnt1; Idx1++) {
+                for (Idx2 = 0; Idx2 < Cnt2; Idx2++) {
+                    NrStr = (nr2Str(Idx1, 2) + nr2Str(Idx2, 2));
+                    if (JSE_ImgsIdx >= JSE_NrImgs) {
+                        alert("JSE: Error: Too many images (define more space in JSE_Init!).");
+                        return;
+                    }
+                    ImgStr = (Base + Name + NrStr + Ext);
+                    JSE_Imgs[JSE_ImgsIdx] = new ImgEntry(ImgStr, (Name + NrStr));
+                    JSE_ImgsIdx++;
+                }
+            }
+        }
+    }
+}
+
+//-----------------------------------------------------
+// I1 = document image IDX or NAME (html tag)
+// I2 = preloaded image NAME to change to
+
+function JSE_chImgPN(I1, I2) {
+    if (JS_Enabled) {
+        if (JSE_Imgs != null) {
+            for (var Idx = 0; Idx < JSE_NrImgs; Idx++) {
+                if (JSE_Imgs[Idx] == null) {
+                    alert("Image named \"" + I2 + "\" is spelled wrong or not preloaded!");
+                    return;
+                }
+                if (JSE_Imgs[Idx].Name == I2) {
+                    if (JSE_Imgs[Idx].Img != null)
+                        document.images[I1].src = JSE_Imgs[Idx].Img.src;
+                    return;
+                }
+            }
+        }
+    }
+}
+
+
+//-----------------------------------------------------
+// I1 = document image IDX or NAME (html tag)
+// I2 = preloaded image NAME to change to (if not switched "on")
+
+function JSE_chSwImgPN(I1, I2) {
+    if (JS_Enabled)
+			  if (JSE_Ready)
+	        if ((JSE_SwImg == null) || (JSE_SwImg != I1))
+	            JSE_chImgPN(I1, I2);
+}
+
+//-----------------------------------------------------
+// I1 = document image NAME (tag)
+// I2 = preloaded image NAME to change to now
+// I3 = preloaded image NAME to change back to when function is called again..
+
+function JSE_swImgPN(I1, I2, I3) {
+    if (JS_Enabled)
+		    if (JSE_Ready) {
+            if (JSE_SwEval != null)
+                eval(JSE_SwEval);
+            JSE_SwEval = "JSE_chImgPN(\"" + I1 + "\", \"" + I3 + "\");";
+            JSE_SwImg = I1;
+            JSE_chImgPN(I1, I2);
+        }
+}
+
+if (JS_Enabled) {
+    JSE_Init(15);
+    JSE_preLdImgs('BASE=;NAME=lurken;EXT=.gif;SKEME=4:3;START=0000;');
+    JSE_Ready = true;
+}
+		
+//-->
+</SCRIPT>	
+	
+	
+
+</HEAD>
+
+<body bgcolor="#758DB8" > 
+
+<table width="90%" border="0" align="center"  CELLSPACING=0 CELLPADDING=0>    
+<TR width="100%">
+<TD valign="bottom">
+
+
+<b>Vervtur - 99</b><br><br>
+
+- "rull over Alf, er du snill - du er så tung!" Faen, det er Øydis som gnåler. Jeg trekker meg stille opp av den svære Tyin-posen hennes, trekker på meg buksene og tasser ned i dusjen. 
+<br><br>
+</td>
+<td align="right">
+<div align="right">
+
+<IMG SRC="lurken0000.gif" NAME="lurken0000" BORDER=0 ><br><A 
+
+HREF="lurken_0199_02.html" onMouseOver = "JSE_chSwImgPN('lurken0100', 'lurken0101');" onMouseOut  = "JSE_chSwImgPN('lurken0100', 'lurken0100');" onClick     = "JSE_swImgPN(  'lurken0100', 'lurken0101', 'lurken0100');"><IMG SRC="lurken0100.gif" NAME="lurken0100" BORDER=0></A><A 
+HREF="lurken_0199.html" onMouseOver = "JSE_chSwImgPN('lurken0200', 'lurken0201');" onMouseOut  = "JSE_chSwImgPN('lurken0200', 'lurken0200');" onClick     = "JSE_swImgPN(  'lurken0200', 'lurken0201', 'lurken0200');"><IMG SRC="lurken0200.gif" NAME="lurken0200" BORDER=0></A><A 
+HREF="lurken_0199_04.html" onMouseOver = "JSE_chSwImgPN('lurken0300', 'lurken0301');" onMouseOut  = "JSE_chSwImgPN('lurken0300', 'lurken0300');" onClick     = "JSE_swImgPN(  'lurken0300', 'lurken0301', 'lurken0300');"><IMG SRC="lurken0300.gif" NAME="lurken0300" BORDER=0></A>
+
+</div>
+
+</td>
+</tr>
+
+</table>
+<table width="90%" border="0" align="center"  CELLSPACING=0 CELLPADDING=0>    
+
+<TR width="100%">
+
+<TD>
+-Hva faen skjedde i går kveld? Dusjene her på Studenterhytta er drit kalde - og hode banker. Jaja så blei det ikke bord- dama allikevel. Det føles ikke så kult å starte å vaske her og nå,- selv om festbongen var gratis.
+Vaskinga gikk greit<br><br>
+
+- 1 time. Helvete! Sykkel-dekket bak er flatt! Dette er genialt; tømmer-menn, litt guffen i magen, flatt dekk og fire timer til avreise med resten av styret på vervstur til Røros!!
+<br>
+ 
+<br>
+<br>
+
+"Døø-" -Det er rompissen som lirer av seg. "- eh, foreldrene mine kommer på besøk i dag, er det greit eller?" -Joda, klart det. Fett, der røyk den luren, nå må det ryddes.
+Avtalen var å møte halv fem foran Hovedbygget. Jeg stakk nedover i god tid for å slippe å treffe gamlingene. Runder hjørnet på hovedbygget i fin stil "on blades"!- ingen reaksjon fra publikumet på trappa. Litt nedtur! Vel, i dag kan det kun gå oppover. Prøver å kjekke meg litt overfor Katinka, ingen respons der heller.<br><br>
+Føler meg ikke helt god. Jeg blir med Line bort på Tapir.  Ååhh, ff - Cola på tom mage  er et helvete. Har ikke særlig lyst på ei ny fyllekule igjen i kveld - Etter Øydis-opplegget bør jeg vel holde meg litt i bakgrunnen.
+<br><br>
+Kjøreturen gikk greit,- måtte jo selvfølgelig handle øl jeg, Mats og Gjermund hamstret godt. Kommer opp I mørke til sætra til Arnes tante. 
+Hva er dette her for noe? - Greitnok at hytta var liten, det var jeg jo forberedt på, men her er det jo ingenting. 
+Jeg gir opp å se etter lysbryteren, setter meg heller på krobenken og popper en lunken Dahls. 
+Noe skal en jo ha. Vet ikke helt, hadde på en måte venta meg ei godt innreda skihytte med alle fasiliteter. 
+Dette her er jo ei slik hytte-hytte som glad-kristne bonderomantikere hadde fått røde kinn og tårer I øynene bare av å se på postkort
+- faen ta dem og tradisjonene; Utedo er noe dritt. 
+Men nå er jeg jo her, så nå gjelder det å stråle av selvtillit og vise at denne grabben har kontroll. 
+Bare det ikke blir sang, leker, levendelys og kosing. Da skal jeg ruse meg ut av dette bollebake-ake-kake-reiret og inn en surrealistisk ego-trip. 
+
+<br><br>"Heisann, sveisann - gutter og jenter velkommen til Vervstur, nå skal vi jammen kose oss dere. -Faen. Først tenkte jeg at vi kunne begynne med en navnelek..." messer den alltid like salig smilende Henrik. - Satan så koslig han kan være. Og jeg har enda ikke begynt på øl nummer to. Overfor meg sitter Elisabeth, hun nærmest lyser, klarer ikke å sitte stille og det ser ut som om hun kommer til å klappe i hendene vært sekund. Sååå klar  for å leke, - stakkars jente, rett fra 
+v.g.s. vet vel ikke bedre, sprudlesnella.<br><br>
+Formen kom seg utover kvelden, ettersom jeg fikk innpå mer øl, utrolig hvor godt det gjør på en litt sigen kropp.- Øydis!?<br><br>
+Hva faen?, godt, det er bare Gunnar og Anna som går gjennom hvem som ikke kunne være med på tur. Alt er som før, godt å vite. 
+Tingene gikk ganske greit, etter forholdene. Ute var det mørkt, folk var trøtte og nachspiel-utsiktene var dårlige.<br><br>
+Våkner av at Katinka stryker litt for hardt over ryggen - og av at Gjermund krafser i fotenden. 
+Hiver på noen klær, finner noe sko og stikker bak hytta, pisser. Der rett foran meg i  bekken, står Åsa og Anna og vasker seg. Og her står jeg, blott
+lagt for verdens åsyn. Kickstart på dagen.<br><br>
+Smører meg et par brødskiver, mekker en kopp kakao av  Sing-folkas Freiaposer. Setter meg godt tilbake i benken, de andre rydder.
+Litt om litt blir det fullt rundt bordet, stemingen er ikke akkurat i taket, ikke den samme piffen i dag nei. Vi sitter og venter på  at Henrik, Arne og Mats skal komme fra Ålen. 
+De stakk tidlig for å skaffe  batterier til "boom -blasteren". "heisann, her er vi, har alle stått opp og klare for tur?" Henrik kommer inn døren og skinner som en sol. 
+Med knikkers, hvite kne-trømper og mokkasiner, klarer vår lille stråle å overgå seg igjen. Hakk i hæl følger resten av gutta
+, med seg har de batterier for 450 kroner.<br><br>
+Som den fjellvante vestlendingen jeg var stilte jeg godt forberedt, men mine Matterhorn klatrestøvler var gjerne i overkant for disse myrheiene. 
+Ikke mye å skryte av dette i området her nei. Vel avgårde ser jeg at det er andre som kanskje sliter litt mer en meg.: 
+Foran meg på den gjørmete stien går Arne iført kun  joggesko i kjent stil lett foroverlent med hendene godt plantet i lommene på olabuksa. - Er du våt? spør jeg Martin, også iført joggesko. "Ikke faen, jeg er bare svett på bena! Glefser han tilbake. Det er fint på tur!
+<br><br>
+På toppen blåser det helt sinnsykt. Kjeksen blir fortært og obligatoriske toppbilder blir tatt. Nedover leder Sprudlesnella an i flott galopp tett fulgt av blindtarmen Lars. Lurer faktisk på om det ikke var søstra til Sprudlesnella jeg tok en gang på høsten da jeg var russ. Da var jeg 18 og søstera hennes er vist 17 nå. Nå er jeg 22 så da blir… nei!
+<br><br>
+Godt stuet inn på hytta igjen er det bare å forberede et aldri så lite vorspiel. 
+"Ok er alle klare for et deiiilig bad i elva til Arne?" Nei! Igjen er det Henrik som bare oser av selvtillitt. 
+Stemningen er til å ta å føle på. Alle er avventende,- Gunnar har allerede bestemt seg, han har gjort dette før 
+- takker nei. Har bestemt meg jeg også, men så er det en jævel som bryter sammen "Klart det blir bading!" 
+Faen ta nå er tvilerne på gli og det er ingen vei tilbake. - Et bad hadde gjort godt nå!! 
+Proklamerer jeg høyt og tydelig, svinger håndkleet over nakken mens jeg ser etter beundrene blikk og rullende 
+øyne blant vår kvinnelig skare. Ingen reaksjon. Alt hadde vært så mye greiere hvis bare den ene stakkaren hadde hold kjeft.
+Da ville det vært Henrik som hadde vært sær og ikke, som det da ble, Gunnar.<br><br>
+"Har ikke du vært med på dette her før du da?" Det er Tom som spør utfordrende I det vi svinger oss opp mot hytta etter badet. 
+Jeg skal akkurat til å lire av meg den værste historia om vassdrags kryssing i militæret, da jeg blir avbrutt av at Guri og Marit kommer kjørende opp veien. 
+Der har du to snertne babes. Nå kan det bli fart på sakene her ja, nå blir det drekking med damer og greier! 
+<br><br>
+"Hei alle sammen, jeg har en kjempegod drikkelek - er dere med?" Sprudlesnella vil leke! Konseptet hennes slår feil. "SPERM, BALLE, PIKK!" 
+Tom er allerede rød i kinnene og vil ha igang en lek han kan. Det er en hit, spermet fyker rundt bordet i stor fart, blir sendt i retur av pikken og hoppet over av ballene.
+Lars er allerede så godt i gang at han kommer liksom ikke inni det hele. 
+<br><br>
+Imens kjenner jeg lukt av mat i retning kjøkkenet og Henrik. Han har fått på seg et hvitt forkle og ser ordentlig sneisen ut der han står og flørter med Line, - ikke rart det har tatt snart toogenhalv time å lage maten klar.
+Kokken takker for alle komplemangene og er ganske tilfreds med bragden sin. 
+<br><br>Det gjelder å gi litt, så får man alltids noe igjen. For min del er jeg snart tom for øl, og jeg vet at "henrie-boy" har en kasse øl stående. Kvelden er redda.
+Brølet fra "Boomblasteren" blir skrudd ned "Jeg vil gjerne takke for en hyggelig weekend her sammen med dere, jeg vil spesielt takke… takke… svada… osv…" Line, den rypa kan jammen slikke romper! 
+Og med det stakk hun, Gunnar, PK og Heidi av fra resten av laget,  og den forestående hytte- vasken.
+<br><br>
+Resten gikk som det bare måtte gå; Vi gikk alle tom for drikke, barskapet til tanta til Arne ble åpna, 
+- noe som hold igang selskapet omlag en tfantasier (???) inn i øret på meg.
+<br>
+<br>
+Alf
+<br>
+
+
+</td>
+</tr>
+</table>
+
+
+
+</BODY>
+</HTML>

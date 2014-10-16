@@ -1,0 +1,7 @@
+  <div>
+.......................................................................
+
+  </div>
+  <div style="border: inset 1px white;height: expression(body.clientHeight - 300 + 'px');overflow: auto;">
+............................................
+  </div>

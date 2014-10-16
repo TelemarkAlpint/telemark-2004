@@ -1,0 +1,41 @@
+<HTML>
+  <HEAD>
+	 <TITLE>NTNUI Telemark</TITLE>
+	 <LINK REL="stylesheet" HREF="../style.css" TYPE="text/css">
+  </HEAD>
+  <BODY>
+<P>Hvis du skriver noe feil får du ikke til å rette det, så det bes om at du
+  sjekker grundig før du godkjenner. De to knappene er uavhengig av hverandre og
+du kan bruke en an gangen!</P>
+
+<form method="POST" action="siste_nytt.php">
+  <p>
+  <b>Navn:</b><br>
+  <input type="text" name="navn" size="20"></p>
+
+  <p><b>Siste nytt:<br>
+  </b><textarea rows="10" name="innlegg" cols="46"></textarea><br>
+  <input type="submit" value="Legg til nyhet" name="submit" style="float: right"></p>
+</form>
+
+  <p>&nbsp;</p>
+
+
+<form method="POST" action="vi_registrerer.php">
+  <b>Og vi registrerer:</b> (Feil fikset: Det går fint ann å legge til flere linjer nå.. Takk for tipset Hassan!)<br>
+  <textarea rows="6" name="innlegg" cols="46">..at</textarea><br>
+  <input type="submit" value="Legg til kommentar" name="submit" style="float: right"></p>
+</form>
+<p>Den går ann å legge inn html formateringer i det som skrives inn. Man må ikke bruke noen form for <i>"</i> eller <i>'</i> rett og slett fordi det blir av en eller annen grunn lagret med en strek foran. Slik <i>\"</i>. Særlig inni en html-tag er dette et problem, men som oftest går det greit uten <i>"</i>-er</p>
+<table border = 0 cellpadding = 2>
+  <tr><td><b>html tagger og html kode</b></td><td>&nbsp;&nbsp;&nbsp;</td><td><b>slik blir det seende ut</b></td></tr>
+  <tr><td>&lt;i&gt;noe&lt;/i&gt;</td><td>&nbsp;&nbsp;&nbsp;</td><td> <i>noe</i> </td></tr>
+  <tr><td>&lt;u&gt;noe&lt;/u&gt;</td><td>&nbsp;&nbsp;&nbsp;</td><td> <u>noe</u> </td></tr>
+  <tr><td>&lt;b&gt;noe&lt;/b&gt;</td><td>&nbsp;&nbsp;&nbsp;</td><td> <b>noe</b> </td></tr>
+  <tr><td>&lt;a href=side.htm&gt;link&lt;/a&gt;</td><td>&nbsp;&nbsp;&nbsp;</td><td> <a href=side.htm>link</a> </td><td><i>(her er det viktig og ikke ha med "-er som beskrevet over)</i></td></tr>
+  <tr><td>&lt;a href=side.htm target=_blank&gt;link&lt;/a&gt;</td><td>&nbsp;&nbsp;&nbsp;</td><td> <a href=side.htm target=_blank>link</a> </td><td><i>(samme som over bare at her åpnes linken i et nytt vindu.)</i></td></tr>
+
+</table>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+
+<TITLE>Lurken 01 - 1999</TITLE>
+<link rel="stylesheet" type="text/css" href="telemarkgruppa.css">
+
+<SCRIPT LANGUAGE = "JavaScript">
+
+
+<!--
+
+var JS_Enabled = false;
+
+if (navigator != null) {
+    var Browser = navigator.appName + " " + navigator.appVersion;
+    var nn = Browser.substring(9, 12);
+    var ms = Browser.substring(50, 53);
+    if (Browser.substring(0, 8) == "Netscape")
+        if (nn >= 3)
+            JS_Enabled = true;
+    if (Browser.substring(0, 9) == "Microsoft")
+        if (ms >= 4)
+            JS_Enabled = true;
+}
+
+//-----------------------------------------------------
+
+if (JS_Enabled) {
+    var JSE_Ready = false;
+    var JSE_NrImgs = 0;
+    var JSE_Imgs = null;
+    var JSE_ImgsIdx = 0;
+    var JSE_SwEval = " ";
+    var JSE_SwImg = " ";
+    var JSE_TimeOut = null;
+}
+
+function JSE_Init(NrImgs) {
+    if (JS_Enabled) {
+        JSE_Imgs = new Array(NrImgs);
+        JSE_NrImgs = NrImgs;
+        JSE_ImgsIdx = 0;
+        JSE_SwEval = null;
+        JSE_SwImg = null;
+    }
+}
+
+//-----------------------------------------------------
+function nr2Str(Nr, Sz) {
+    if (JS_Enabled) {
+        var Str = Nr.toString();
+        while (Str.length < Sz)
+            Str = "0" + Str;
+        return Str;
+    }
+}
+
+//-----------------------------------------------------
+function ImgEntry(ImgStr, Name) {
+    if (JS_Enabled) {
+        this.Img = new Image();
+        this.Img.src = ImgStr;
+        this.Name = Name;
+    }
+}
+
+//-----------------------------------------------------
+// JSE_preLdImgs("BASE=meny/;NAME=meny_;EXT=.jpg;SKEME=14:1;START=0000;");
+// skeme supports only :??:?? and START isn't implemented yet..
+
+function JSE_preLdImgs(ParamStr) {
+    if (JS_Enabled) {
+        Params = ParamStr.split(";");
+        var Base  = "";
+        var Name  = null;
+        var Ext   = "";
+        var Skeme = null;
+        var Start = null;
+        for (i = 0; i < Params.length; i++) {
+            if (Params[i].substring(0, 5) == "BASE=" ) Base  = Params[i].substring(5);
+            if (Params[i].substring(0, 5) == "NAME=" ) Name  = Params[i].substring(5);
+            if (Params[i].substring(0, 4) == "EXT="  ) Ext   = Params[i].substring(4);
+            if (Params[i].substring(0, 6) == "SKEME=") Skeme = Params[i].substring(6);
+            if (Params[i].substring(0, 6) == "START=") Start = Params[i].substring(6);
+        }
+        if (Skeme == null) {
+            alert("JSE: Error in parameters to JSE_preLdImgs! - check document!");
+            return;
+        } else {
+            var TheSkeme = Skeme.split(":");
+            var Cnt1 = parseInt(TheSkeme[0]);
+            var Cnt2 = parseInt(TheSkeme[1]);
+            for (Idx1 = 0; Idx1 < Cnt1; Idx1++) {
+                for (Idx2 = 0; Idx2 < Cnt2; Idx2++) {
+                    NrStr = (nr2Str(Idx1, 2) + nr2Str(Idx2, 2));
+                    if (JSE_ImgsIdx >= JSE_NrImgs) {
+                        alert("JSE: Error: Too many images (define more space in JSE_Init!).");
+                        return;
+                    }
+                    ImgStr = (Base + Name + NrStr + Ext);
+                    JSE_Imgs[JSE_ImgsIdx] = new ImgEntry(ImgStr, (Name + NrStr));
+                    JSE_ImgsIdx++;
+                }
+            }
+        }
+    }
+}
+
+//-----------------------------------------------------
+// I1 = document image IDX or NAME (html tag)
+// I2 = preloaded image NAME to change to
+
+function JSE_chImgPN(I1, I2) {
+    if (JS_Enabled) {
+        if (JSE_Imgs != null) {
+            for (var Idx = 0; Idx < JSE_NrImgs; Idx++) {
+                if (JSE_Imgs[Idx] == null) {
+                    alert("Image named \"" + I2 + "\" is spelled wrong or not preloaded!");
+                    return;
+                }
+                if (JSE_Imgs[Idx].Name == I2) {
+                    if (JSE_Imgs[Idx].Img != null)
+                        document.images[I1].src = JSE_Imgs[Idx].Img.src;
+                    return;
+                }
+            }
+        }
+    }
+}
+
+
+//-----------------------------------------------------
+// I1 = document image IDX or NAME (html tag)
+// I2 = preloaded image NAME to change to (if not switched "on")
+
+function JSE_chSwImgPN(I1, I2) {
+    if (JS_Enabled)
+			  if (JSE_Ready)
+	        if ((JSE_SwImg == null) || (JSE_SwImg != I1))
+	            JSE_chImgPN(I1, I2);
+}
+
+//-----------------------------------------------------
+// I1 = document image NAME (tag)
+// I2 = preloaded image NAME to change to now
+// I3 = preloaded image NAME to change back to when function is called again..
+
+function JSE_swImgPN(I1, I2, I3) {
+    if (JS_Enabled)
+		    if (JSE_Ready) {
+            if (JSE_SwEval != null)
+                eval(JSE_SwEval);
+            JSE_SwEval = "JSE_chImgPN(\"" + I1 + "\", \"" + I3 + "\");";
+            JSE_SwImg = I1;
+            JSE_chImgPN(I1, I2);
+        }
+}
+
+if (JS_Enabled) {
+    JSE_Init(9);
+    JSE_preLdImgs('BASE=;NAME=lurken_;EXT=.gif;SKEME=2:3;START=0000;');
+    JSE_Ready = true;
+}
+		
+//-->
+</SCRIPT>	
+	
+
+</HEAD>
+
+<body bgcolor="#758DB8" > 
+
+<table width="90%" border="0" align="center"  CELLSPACING=0 CELLPADDING=0>    
+<TR width="100%">
+<TD align="center">
+<br><br>
+
+<IMG SRC="lurken_0000.gif" NAME="lurken_0000" BORDER=0 ><br>
+<A HREF="lurken_0199_01.html" 
+onMouseOver = "JSE_chSwImgPN( 'lurken_0100', 'lurken_0101');" 
+onMouseOut  = "JSE_chSwImgPN( 'lurken_0100', 'lurken_0100');" 
+onClick     = "JSE_swImgPN(  'lurken_0100', 'lurken_0101', 'lurken_0100');">
+<IMG SRC="lurken_0100.gif" NAME="lurken_0100" BORDER=0></A>
+
+<br><br>
+<P align=right>
+Utgave nr. 1 1999
+</P>
+<div align="left">
+
+<b>
+Velkommen til &aring;rets f&oslash;rste utgave av Lurken<br></b>
+
+I fjor kom det som kjent bare ut en Lurk, noe som vi skal klare å slå I år.<br> 
+
+Årets store nyhet på klubbavisfronten er at Lurken også er å finne på verdensveven!<br><br>
+
+Målsettingen vår er å få ut fire utgaver av klubbavisen vår.<br>
+
+Vi setter derfor veldig stor pris på om noen har noen bidrag til en av våre utgaver. Hvis det er noen som har vært på en eller annen tur, har fått snusen I noe fett sladder, tatt noen kule bilder eller rett og slett føler for å si noen velvalgte ord til de andre I gruppa, så ikke nøl med å si ifra. Vi I redaksjonen blir I alle fall ufattelig glade.<br><br>
+
+Håper dere koser dere med bladet vårt!<br><br>
+
+<b>I dette nummeret kan du kose deg med f&oslash;lgende:<br><br></b>
+
+<li type="1"><A HREF="lurken_0199_01.html">In Bag With Henrik</A></li>
+<li type="1"><A HREF="lurken_0199_02.html">Ord fra lederen: Sn&oslash; i sikte</A></li>
+<li type="1"><A HREF="lurken_0199_03.html">Vervtur 99</A></li>
+<li type="1"><A HREF="lurken_0199_04.html">Pray for snow party!</A></li>
+<li type="1"><A HREF="lurken_0199_05.html">Gen. Fors. </A></li>
+<li type="1"><A HREF="lurken_0199_06.html">Høstfesten </A></li>
+<li type="1"><A HREF="lurken_0199_07.html">Åre og Meråker-tur</A></li>
+<li type="1"><A HREF="lurken_0199_08.html">Hva skal skje i telemarkgruppa i år? : &Aring;re</A></li>
+<li type="1"><A HREF="lurken_0199_09.html">Hva skal skje i telemarkgruppa i år? : Alperittet `00 + Strandafjellet</A></li>
+<li type="1"><A HREF="lurken_0199_10.html">Hva skal skje i telemarkgruppa i år? : Skifestivalen 2000</A></li>
+<li type="1"><A HREF="lurken_0199_11.html">5 på trening  </A></li>
+<li type="1"><A HREF="lurken_0199_12.html">Sladder</A></li>
+<li type="1"><A HREF="lurken_0199_13.html">Årets feteste skifilmer </A></li>
+<li type="1"><A HREF="lurken_0199_14.html">The Lurken-team</A></li>
+<br><br><br>
+<hr>
+<b>Bidrag og tips </b>sendes til <a href="mailto:moen@stud.ntnu.no">lederen for Lurken</A>.
+<br><br>
+- <a href="mailto:matsbjor@stud.ntnu.no">Webansvarlig</A> har utarbeidet Lurken p&aring; verdensveven.
+<br><br><br>
+</div>
+</td>
+</tr>
+</table>
+
+
+
+</BODY>
+</HTML>

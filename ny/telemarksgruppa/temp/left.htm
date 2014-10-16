@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 6.0::19990601::extensions to HTML 4.0//EN" "hmpro6.dtd">
+<HTML>
+  <HEAD>
+	 <TITLE>NTNUI Telemark-Alpint</TITLE>
+	 <LINK REL="stylesheet" HREF="Style.css" TYPE="text/css">
+	 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1"> <SCRIPT LANGUAGE="javascript">
+
+if (document.images) {
+  image1on = new Image();
+  image1on.src = "copy02.jpg";
+  image1off = new Image();
+  image1off.src = "copy01.jpg";
+  image2on = new Image();
+  image2on.src = "logo02.jpg";
+  image2off = new Image();
+  image2off.src = "logo01.jpg";
+
+}
+
+function changeImages() {
+  if (document.images) {
+    for (var i=0; i<changeImages.arguments.length; i+=2) {
+      document[changeImages.arguments[i]].src = eval(changeImages.arguments[i+1] + ".src");
+    }
+  }
+}
+
+// -->
+</SCRIPT> <BASE TARGET="middle">
+  </HEAD>
+  <BODY>
+	 <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0"
+	  STYLE="border-collapse: collapse" BORDERCOLOR="#111111" WIDTH="100"
+	  ID="AutoNumber1" HEIGHT="100%">
+		<TR>
+		  <TD WIDTH="100%" VALIGN="top">
+		  	 <A TARGET="_top" HREF="index.htm">
+			 <IMG NAME="image2" BORDER="0" ONMOUSEOVER="changeImages('image2', 'image2on')"
+			  ONMOUSEOUT="changeImages('image2', 'image2off')" SRC="logo01.jpg" WIDTH="120"
+			  HEIGHT="225"></A>
+<br><br>
+			<A HREF="https://secure.chess.no/private_multi.php?distid=127&distdepid=1&campaignid=10" TARGET="new" ><img src="chess.gif" BORDER="0"></a><br>
+			<A HREF="chess.htm" TARGET="new" ><center>les mere om chess-avtalen her</center></a>
+			 <P>&nbsp;</P>
+			 <P></P> </TD>
+
+		</TR>
+
+	 </TABLE> </BODY>
+</HTML>

@@ -1,0 +1,351 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<TITLE>Toppen av sladdrespalten</TITLE>
+
+<SCRIPT LANGUAGE = "JavaScript">
+
+
+<!--
+
+var JS_Enabled = false;
+
+if (navigator != null) {
+    var Browser = navigator.appName + " " + navigator.appVersion;
+    var nn = Browser.substring(9, 12);
+    var ms = Browser.substring(50, 53);
+    if (Browser.substring(0, 8) == "Netscape")
+        if (nn >= 3)
+            JS_Enabled = true;
+    if (Browser.substring(0, 9) == "Microsoft")
+        if (ms >= 4)
+            JS_Enabled = true;
+}
+
+//-----------------------------------------------------
+
+if (JS_Enabled) {
+    var JSE_Ready = false;
+    var JSE_NrImgs = 0;
+    var JSE_Imgs = null;
+    var JSE_ImgsIdx = 0;
+    var JSE_SwEval = " ";
+    var JSE_SwImg = " ";
+    var JSE_TimeOut = null;
+}
+
+function JSE_Init(NrImgs) {
+    if (JS_Enabled) {
+        JSE_Imgs = new Array(NrImgs);
+        JSE_NrImgs = NrImgs;
+        JSE_ImgsIdx = 0;
+        JSE_SwEval = null;
+        JSE_SwImg = null;
+    }
+}
+
+//-----------------------------------------------------
+function nr2Str(Nr, Sz) {
+    if (JS_Enabled) {
+        var Str = Nr.toString();
+        while (Str.length < Sz)
+            Str = "0" + Str;
+        return Str;
+    }
+}
+
+//-----------------------------------------------------
+function ImgEntry(ImgStr, Name) {
+    if (JS_Enabled) {
+        this.Img = new Image();
+        this.Img.src = ImgStr;
+        this.Name = Name;
+    }
+}
+
+//-----------------------------------------------------
+// JSE_preLdImgs("BASE=meny/;NAME=meny_;EXT=.jpg;SKEME=14:1;START=0000;");
+// skeme supports only :??:?? and START isn't implemented yet..
+
+function JSE_preLdImgs(ParamStr) {
+    if (JS_Enabled) {
+        Params = ParamStr.split(";");
+        var Base  = "";
+        var Name  = null;
+        var Ext   = "";
+        var Skeme = null;
+        var Start = null;
+        for (i = 0; i < Params.length; i++) {
+            if (Params[i].substring(0, 5) == "BASE=" ) Base  = Params[i].substring(5);
+            if (Params[i].substring(0, 5) == "NAME=" ) Name  = Params[i].substring(5);
+            if (Params[i].substring(0, 4) == "EXT="  ) Ext   = Params[i].substring(4);
+            if (Params[i].substring(0, 6) == "SKEME=") Skeme = Params[i].substring(6);
+            if (Params[i].substring(0, 6) == "START=") Start = Params[i].substring(6);
+        }
+        if (Skeme == null) {
+            alert("JSE: Error in parameters to JSE_preLdImgs! - check document!");
+            return;
+        } else {
+            var TheSkeme = Skeme.split(":");
+            var Cnt1 = parseInt(TheSkeme[0]);
+            var Cnt2 = parseInt(TheSkeme[1]);
+            for (Idx1 = 0; Idx1 < Cnt1; Idx1++) {
+                for (Idx2 = 0; Idx2 < Cnt2; Idx2++) {
+                    NrStr = (nr2Str(Idx1, 2) + nr2Str(Idx2, 2));
+                    if (JSE_ImgsIdx >= JSE_NrImgs) {
+                        alert("JSE: Error: Too many images (define more space in JSE_Init!).");
+                        return;
+                    }
+                    ImgStr = (Base + Name + NrStr + Ext);
+                    JSE_Imgs[JSE_ImgsIdx] = new ImgEntry(ImgStr, (Name + NrStr));
+                    JSE_ImgsIdx++;
+                }
+            }
+        }
+    }
+}
+
+//-----------------------------------------------------
+// I1 = document image IDX or NAME (html tag)
+// I2 = preloaded image NAME to change to
+
+function JSE_chImgPN(I1, I2) {
+    if (JS_Enabled) {
+        if (JSE_Imgs != null) {
+            for (var Idx = 0; Idx < JSE_NrImgs; Idx++) {
+                if (JSE_Imgs[Idx] == null) {
+                    alert("Image named \"" + I2 + "\" is spelled wrong or not preloaded!");
+                    return;
+                }
+                if (JSE_Imgs[Idx].Name == I2) {
+                    if (JSE_Imgs[Idx].Img != null)
+                        document.images[I1].src = JSE_Imgs[Idx].Img.src;
+                    return;
+                }
+            }
+        }
+    }
+}
+
+
+//-----------------------------------------------------
+// I1 = document image IDX or NAME (html tag)
+// I2 = preloaded image NAME to change to (if not switched "on")
+
+function JSE_chSwImgPN(I1, I2) {
+    if (JS_Enabled)
+			  if (JSE_Ready)
+	        if ((JSE_SwImg == null) || (JSE_SwImg != I1))
+	            JSE_chImgPN(I1, I2);
+}
+
+//-----------------------------------------------------
+// I1 = document image NAME (tag)
+// I2 = preloaded image NAME to change to now
+// I3 = preloaded image NAME to change back to when function is called again..
+
+function JSE_swImgPN(I1, I2, I3) {
+    if (JS_Enabled)
+		    if (JSE_Ready) {
+            if (JSE_SwEval != null)
+                eval(JSE_SwEval);
+            JSE_SwEval = "JSE_chImgPN(\"" + I1 + "\", \"" + I3 + "\");";
+            JSE_SwImg = I1;
+            JSE_chImgPN(I1, I2);
+        }
+}
+
+if (JS_Enabled) {
+    JSE_Init(15);
+    JSE_preLdImgs('BASE=;NAME=lurken;EXT=.gif;SKEME=4:3;START=0000;');
+    JSE_Ready = true;
+}
+		
+//-->
+</SCRIPT>	
+	
+<base target="lurken">	
+	
+<style TYPE="text/css">
+  <!--
+    A          { font-family: "verdana, arial"; text-shadow: "black"  }
+    A:link     { color: #000036; text-decoration: "none"  }
+    A:visited  { color: #000036; text-decoration: "none"  }
+    A:active   { color: #3F5CC5; text-decoration: "none"  }
+    A:hover    { color: #3F5CC5; text-decoration: "none"  }
+  //-->
+  </style>
+
+</HEAD>
+
+
+
+ <body style="font-family: Verdana, Arial; font-size: 10pt; text-decoration: none;" bgcolor="#758DB8" > 
+
+<table width="100%" border="0" class="FFBasic" align="left" valign="top" CELLSPACING=0 CELLPADDING=0 style="font-family: Verdana, Arial; font-size: 10pt" >    
+<tr>      
+
+<NOBR>
+<TD valign="top" align="right">
+
+
+
+<table width="90%" border="0" class="FFBasic" align="center"  CELLSPACING=20 CELLPADDING=0 style="FONT-FAMILY: Verdana, Arial; FONT-SIZE: 10pt" cols=1>    
+
+<TR width="100%">
+
+<TD align="center">
+
+<!--
+<font style="font-family: Haettenschweiler, Verdana, Arial; font-size: 40pt">
+<P align=center>
+Lurken
+</FONT>
+<font style="font-family: Haettenschweiler, Verdana, Arial; font-size: 12pt">
+
+<hr><center>
+Telemarkgruppa - En gjeng med sosiale fyrt&aring;rn
+</center><hr>
+</FONT>
+<font style="font-family: Verdana, Arial; font-size: 8pt">
+<P align=right>
+Utgave nr. 1 1999
+</P></FONT>
+<br>
+
+-->
+
+
+<IMG SRC="lurken0000.gif" NAME="lurken0000" BORDER=0><br>
+<nobr>
+<A 
+HREF="../skrivinn.html" onMouseOver = "JSE_chSwImgPN('lurken0100', 'lurken0101');" onMouseOut  = "JSE_chSwImgPN('lurken0100', 'lurken0100');" onClick     = "JSE_swImgPN(  'lurken0100', 'lurken0101', 'lurken0100');"><IMG SRC="lurken0100.gif" NAME="lurken0100" BORDER=0></A><A 
+HREF="../skrivinn.html" onMouseOver = "JSE_chSwImgPN('lurken0200', 'lurken0201');" onMouseOut  = "JSE_chSwImgPN('lurken0200', 'lurken0200');" onClick     = "JSE_swImgPN(  'lurken0200', 'lurken0201', 'lurken0200');"><IMG SRC="lurken0200.gif" NAME="lurken0200" BORDER=0></A><A 
+HREF="../skrivinn.html" onMouseOver = "JSE_chSwImgPN('lurken0300', 'lurken0301');" onMouseOut  = "JSE_chSwImgPN('lurken0300', 'lurken0300');" onClick     = "JSE_swImgPN(  'lurken0300', 'lurken0301', 'lurken0300');"><IMG SRC="lurken0300.gif" NAME="lurken0300" BORDER=0></A>
+</nobr>
+
+<!--
+<BR><br>
+</font>
+</TD>
+<TD Align="center"> <nobr>
+<img src="lurkentopp.gif" border="0" align="right"></nobr>
+</TD>
+</TR>
+</TABLE>
+
+
+</NOBR>
+</TD>
+</tr>
+-->
+
+</TD>
+</tr>
+
+<tr style="font-size: 10pt; font-family: Verdana, Arial; overflow: scroll;">      
+<td rowspan="2">
+
+<p><font size=4>
+<b>In bag with Henrik</b>
+</font>
+<p><b>
+Portrett-intervju med lederen for<br> 
+telemarkgruppa NTNUI, Henrik Langum.<br>
+Tatt på sengekanten i ungkarskåken<br>
+en sen oktoberkveld.<br>
+</b><br><br>
+
+<img src="henrik01.jpg" align=right BORDER="1" ALT="Henrik Langum viser seg fra en ukjent side.. Legg merke til håndjernene I plysj!">
+Du er nå nyvalgt leder av telemarkgruppa. Hvilke tanker har du om ditt verv?<br>
+<i>Det er en stor utfordring å lede ei så stor gruppe med skiinteresserte studenter
+og jeg ønsker å holde høy aktivitet for medlemmene
+gjennom hele vinteren.</i><br><br>
+
+Har du noe å tilføre telemarksgruppa?<br>
+<i>Ja det tror jeg.<br> 
+Spesielt når det gjelder engasjement i gruppas aktiviteter hvor
+jeg håper på at det kan smitte over på den brede medlemsmassen.
+</i><br><br>
+Hvilken skibakgrunn har du?<br>
+<i>Jeg ble stompeskimester i sjetteklasse
+</i><br><br>
+
+Har du vært på noen heftige Alpe-turer slik alle de tøffe gutta har?<br>
+<i>Ja selvfølgelig, jeg fant virkelig rytmen i Østerriket!
+</i><br><br>
+ 
+Var du på crazy kangaroo afterski eller?<br>
+<i>Hmm, jeg var vel egentlig på hoppuka, men fy faan Bokløv er rå  live.
+</i><br><br>
+
+Hvilke sportslige ambisjoner har du foran kommende sesong?<br>
+<i>Jeg skal delta på Alperittet og  Galdhøpiggenrennet og akter å legge mest
+vekt på studie av kurver  hvor det sviktet litt i fjor.
+(Redaksjonen tror Henrik skal konsentrere seg mest om å legge om fra plogekjøring til telemark)
+</i><br><br>
+
+Har du spilt RS?<br>
+<i>Nei, men rytmisk sportsgymnastikk er utrolig fascinerende. <br>
+</i>For å danne oss en profil av deg har vi "tracka" dine elektroniske spor i en 2 mnd
+<br>Periode. Her er et kort utdrag:<br>
+12/9-1548: ICA-TEMPE<br>
+13/9-1455: Consult sol<br>
+14/9-0010: REMIS<br>
+15/9-1025: Trondheim Medisinske  Senter<br>
+15/9-1040: Svaneapoteket<br>
+ <br><br>
+Har du noen kommentarer til dette?<br>
+<i>Ja , jeg må få skyte inn at jeg er medlem av klubben for høyrehånds stimuli.
+</i><br><br>
+Vil du melde deg ut av denne klubben hvis du mot all formodning skulle få med deg et Rolex-pøk hjem etter en heftig Raga-konsert under UKA?<br>
+<i>Henrik: Ja!!<br><br>
+</i>
+I sommer ble du observert i piccolo outfit utenfor 
+Grand hotell. Er det noe du vil snakke om?<br>
+<img src="henrik02.jpg" align=right BORDER="1" ALT="Redaksjonen I Lurken dro innom Henrik for å ta noen streite bilder til Lurken. Samtlige fikk hakeslepp da vi fant han slik inne på rommet hans... Vi takker vår nye leder Henrik Langum for et konstruktivt og informativt interevju!" >
+<i>Åh, det  skyldes dametørka!<br>
+Fikk nyss i at jenter digger menn i uniform!<br>
+</i><br>
+
+Hvordan er det med sexpress på jobben?<br>
+<i>Det ser jeg på som en bonus, svarer Henrik med et tvangspreget smil om munnen.
+</i><br><br> 
+
+Gruppas medlemmer er opptatt av svakhetene med vår nye leder. Gi meg 5 negative ting ved deg selv.<br>
+<i>Jeg er nok litt hissig,  strebete og for pliktoppfyllende. Dessuten har jeg en tendens til å kjøre taxi frem og tilbake for å handle på  ICA`n på Tempe. Jeg er en feinschmecker og klarer meg ikke uten gourmetmat.
+</i><br><br>
+
+Har unge lovende Langum banka noen i sitt  liv ?<br>
+<i>Jeg  løp etter naboen med øks en sommer!<br><br>
+</i>
+Redaksjonen ønsker ikke å gå noe videre i detalj på denne saken som vil bli oversendt til gruppas adferdspsykolog Ivar Valstad
+<br>Hva drikker du helst ikke på fest?
+<i><br>Hjemmert kommer kontant fra lettere brydd lederspire
+<br>Henrik:" jeg liker ikke utviklingen på dette intervjuet"
+</i>
+<br>Runaldo:" Slapp av, vi er snart ferdig med den seriøse delen"
+<br><br>
+<br>Hvordan vil du ha hjemmerten tilberedt hvis du ble eksponert for varen?
+<i><br>Flambert!
+</i><br><br>
+Hva gjør så vår store leder på en helt vanlig onsdag?
+<br><i>Jeg starter dagen med en whisky, mer er det ikke å si.
+<br><br></i>
+Litt standard dårlig interevju-spørsmål, men si noen ord om ditt første kyss med en gutt.
+<i><br>Det fikk jeg i parken….
+</i>
+<br>
+<br>
+<br>
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+</BODY>
+</HTML>

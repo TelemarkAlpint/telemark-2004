@@ -1,0 +1,329 @@
+<HTML><HEAD>   
+<META NAME="Author" CONTENT="Mats B. Pettersen">   
+
+<TITLE>NTNUI Telemarkgruppas hjemmeside</TITLE>
+
+
+<base target="hoved">
+
+<style TYPE="text/css">
+  <!--
+    A          { font-family: "verdana, arial"; font-size: 8pt; text-shadow: "black"  }
+    A:link     { color: #888888; text-decoration: "none"  }
+    A:visited  { color: #888888; text-decoration: "none"  }
+    A:active   { color: #555555; text-decoration: "none"  }
+    A:hover    { color: #555555; text-decoration: "none"  }
+  //-->
+  </style>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// Dette lille java-scriptet er laget av Mats B Pettersen hoesten 2000
+// Scriptet ble primaert laget for Telemarkgruppen sin hjemmeside...
+// Men det er fritt fram for aa bruke det for ale som maatte oenske det...
+//
+// Laget av: Mats B Pettersen - http://www.stud.ntnu.no/~matsbjor - matsbjor@stud.ntnu.no -
+// Dato: 20.10.00
+
+
+var Godtar_java = false;
+var godta_LastBilder = false;
+
+//-----------------------------------------------------	
+// Sjekker versjon av browser - slik at man vet at java-scriptet fungerer
+//-----------------------------------------------------
+if (navigator != null) {
+    var Browser = navigator.appName + " " + navigator.appVersion;
+    var nn = Browser.substring(9, 12);
+    var ms = Browser.substring(50, 53);
+    if (Browser.substring(0, 8) == "Netscape")
+        if (nn >= 3)
+            Godtar_java = true;
+    if (Browser.substring(0, 9) == "Microsoft")
+        if (ms >= 4)
+            Godtar_java = true;
+}
+
+// Setter noedvendige variabler hvis versjonen av browseren er riktig
+
+if (Godtar_java) {
+	var lastetBilder = false;
+	var Spacer;
+        var Topp;
+	var Bilde;
+}
+
+//-----------------------------------------------------
+// Funksjon LastBilder som laster inn alle bildene i minnet
+//-----------------------------------------------------
+
+	function LastBilder() {
+    	if (Godtar_java) {
+			Bilde = new Array(2);
+			Spacer = "images/spacer.gif";
+			Topp = "meny/meny_0000.gif";
+			Bilde[0] = new Image();
+			Bilde[1] = new Image();
+			Bilde[0].src = "images/peker.gif"; 
+			Bilde[1].src = "meny/meny_0001.gif"; 
+			lastetBilder = true;
+		}
+	}
+
+//-----------------------------------------------------	
+// Funsjon fadeIn som bytter det aktuelle bildet naar musen gaar over linken
+//-----------------------------------------------------
+	
+	function fadeIn(navn) {
+		if ((Godtar_java) && (lastetBilder)) {
+			if (navn=="topp"){
+				document.images[navn].src = Bilde[1].src;
+			}else{
+				document.images[navn].src = Bilde[0].src;
+			}
+		}
+	}
+	
+//-----------------------------------------------------	
+// Funsjon fadeUt som bytter det aktuelle bildet til orginalbildet naar musen gaar "ut av" linken
+//-----------------------------------------------------	
+
+	function fadeUt(navn) {
+		if ((Godtar_java) && (lastetBilder)) {
+			if (navn=="topp"){
+				document.images[navn].src = Topp;
+			}else{
+				document.images[navn].src = Spacer;
+			}
+		}
+	}
+	
+
+	
+// hvis versjonen er riktig lastes bildene
+
+if (Godtar_java) {
+    LastBilder();
+}
+
+function clr(input) {
+	if (Godtar_java) {
+    		if (Browser.substring(0, 8) == "Netscape"){
+		}else{
+			var strTmp = ""
+			if(input.name == "sp-q") document.mainForm.elements[input.name].value = strTmp;
+		}
+	}
+}
+
+// -->
+</SCRIPT>  
+  
+<script language="JavaScript">
+<!--
+function enkeltvindu(url, width, height) {
+        var Win = window.open(url,"enkeltvindu",'width=' + width +
+',height=' + height + ',resizable=no,scrollbars=auto,menubar=no' );
+}
+//-->
+</script>
+  
+  
+</HEAD>
+
+
+
+<body style="font-family: Verdana, Arial; font-size: 10pt; text-decoration: none;" bgcolor="#758DB8" > 
+
+
+<table  border="0" class="FFBasic" align="left" valign="top" CELLSPACING=15 CELLPADDING=0 style="font-family: Verdana, Arial; font-size: 8pt" > 
+
+<TR valign="top">
+<TD valign="top">
+
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+<TR>
+<TD COLSPAN=3>
+		
+<A HREF="hoved.html"
+onMouseOver = "fadeIn('topp'); window.status='Gå til forsiden'; return true;"
+onMouseOut  = "fadeUt('topp'); window.status=''; return true;">
+<IMG SRC="meny/meny_0000.gif" NAME="topp" WIDTH=148 HEIGHT=72 BORDER="0"></a><br>
+			
+</TD>
+</TR>
+
+<TR>
+<TD>
+<IMG SRC="images/meny_02.gif" WIDTH=2 HEIGHT=274></TD>
+<TD WIDTH=135 HEIGHT=274 bgcolor="white" valign=top>
+
+
+
+<IMG SRC="images/spacer.gif" WIDTH=135 HEIGHT=1>
+
+
+<table height=100%>
+<tr valign=top>
+<td>
+
+<font style="font-family: Verdana, Arial; font-size: 7pt; text-decoration: none;" >
+
+
+<form name="mainForm" method="get" action="http://search.atomz.com/search/">
+		
+	
+<IMG SRC="images/spacer.gif" NAME="meny_00" WIDTH=12 HEIGHT=10 border=0 alt="">
+
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/sistenytt.html"
+onMouseOver = "fadeIn('meny_00'); window.status='Les Siste Nytt'; return true;"
+onMouseOut  = "fadeUt('meny_00'); window.status=''; return true;">
+Siste nytt</a><br>
+
+
+<IMG SRC="images/spacer.gif" WIDTH=5 HEIGHT=5 border=0 alt="">
+---------------
+<br>
+<IMG SRC="images/spacer.gif" NAME="meny_01" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/hvemervi.html"
+onMouseOver = "fadeIn('meny_01'); window.status='Hvem er vi?'; return true;"
+onMouseOut  = "fadeUt('meny_01'); window.status=''; return true;">
+Kort om gruppa</a><br>
+
+<IMG SRC="images/spacer.gif" NAME="meny_02" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/hvagjorvi.html"
+onMouseOver = "fadeIn('meny_02'); window.status='Hva gjør vi?'; return true;"
+onMouseOut  = "fadeUt('meny_02'); window.status=''; return true;">
+Terminliste</a><br>
+
+
+<IMG SRC="images/spacer.gif" NAME="meny_03" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A href="skifestivalen.html"  
+onMouseOver = "fadeIn('meny_03'); window.status='Gå til Skifestivalens sider'; return true;"
+onMouseOut  = "fadeUt('meny_03'); window.status=''; return true;">
+Skifestivalen</a><br>
+
+<IMG SRC="images/spacer.gif" NAME="meny_04" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/sladdrespalten.html"
+onMouseOver = "fadeIn('meny_04'); window.status='Gå til Sladdrespalten!!'; return true;"
+onMouseOut  = "fadeUt('meny_04'); window.status=''; return true;">
+Sladrespalten</a><br>
+
+<IMG SRC="images/spacer.gif" NAME="meny_05" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/medlemsblad.html"
+onMouseOver = "fadeIn('meny_05'); window.status='Gå til medlemsbladet LURKEN'; return true;"
+onMouseOut  = "fadeUt('meny_05'); window.status=''; return true;">
+Medlemsbladet</a><br>		
+		
+
+<IMG SRC="images/spacer.gif" NAME="meny_06" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/bilder.html"
+onMouseOver = "fadeIn('meny_06'); window.status='Se noen bilder av oss!!'; return true;"
+onMouseOut  = "fadeUt('meny_06'); window.status=''; return true;">
+Bilder av oss</a><br>
+
+<IMG SRC="images/spacer.gif" NAME="meny_07" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/treninger.html"
+onMouseOver = "fadeIn('meny_07'); window.status='Gå til treningsoversikten'; return true;"
+onMouseOut  = "fadeUt('meny_07'); window.status=''; return true;">
+Treninger</a><br>
+
+<IMG SRC="images/spacer.gif" NAME="meny_08" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/blimedlem.html"
+onMouseOver = "fadeIn('meny_08'); window.status='Hvorden bli medlem??'; return true;"
+onMouseOut  = "fadeUt('meny_08'); window.status=''; return true;">
+Bli medlem</a><br>
+
+<IMG SRC="images/spacer.gif" NAME="meny_09" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/mailingliste.html"
+onMouseOver = "fadeIn('meny_09'); window.status='Info om mailinglista'; return true;"
+onMouseOut  = "fadeUt('meny_09'); window.status=''; return true;">
+Mailingliste</a><br>
+
+<IMG SRC="images/spacer.gif" NAME="meny_10" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/verv.html"
+onMouseOver = "fadeIn('meny_10'); window.status='Info om styret - og de som har verv i telemarkgruppa.'; return true;"
+onMouseOut  = "fadeUt('meny_10'); window.status=''; return true;">
+Styret og verv</a><br>
+
+<IMG SRC="images/spacer.gif" NAME="meny_11" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/sponsorer.html"
+onMouseOver = "fadeIn('meny_11'); window.status='Linker til våre sponsorer'; return true;"
+onMouseOut  = "fadeUt('meny_11'); window.status=''; return true;">
+Sponsorer</a><br>
+
+<IMG SRC="images/spacer.gif" NAME="meny_12" WIDTH=12 HEIGHT=10 border=0 alt="">
+<A HREF="http://www.stud.ntnu.no/studorg/telemark/paa_verdensveven/linker.html"
+onMouseOver = "fadeIn('meny_12'); window.status='Gå til vår o\'store linkeside!!!'; return true;"
+onMouseOut  = "fadeUt('meny_12'); window.status=''; return true;">
+Linker</a>	
+
+
+</font>	
+</td>
+</tr>
+
+<tr valign=bottom>
+<td>
+<style>
+	.buttons {font-family:arial; font-size:10px; background-color:#C1D1EE;}
+	.inputbox {font-family:arial; font-size:10px; background-color:#eeeeee;}
+</style>
+
+
+<IMG SRC="images/spacer.gif" WIDTH=100 HEIGHT=9 border=0 alt=""><br>
+<IMG SRC="images/spacer.gif" WIDTH=5 HEIGHT=5 border=0 alt="">
+<input name="sp-q" type="text" value="Søk gjennom.." size=12 class="inputbox" onFocus="clr(this);">
+<input type=submit value="Søk" class="buttons">
+<input type=hidden name="sp-a" value="000a0514-sp00000000">
+
+</form>
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+		
+</TD>
+<TD>
+<IMG SRC="images/meny_04.gif" WIDTH=11 HEIGHT=274></TD>
+</TR>
+<TR>
+<TD COLSPAN=3>
+<IMG SRC="images/meny_05.gif" WIDTH=148 HEIGHT=15></TD>
+</TR>
+</TABLE>
+
+
+
+<table border="0" CELLSPACING=21 CELLPADDING=0>    
+<tr>      
+<td> 
+
+</td>
+<tr>
+</TABLE>
+
+
+
+<br>
+<br>Sist oppdatert 09.12.01
+
+
+</FONT> 
+</DIV>
+
+</TD>
+</TR>
+</TABLE>
+
+
+
+</BODY>
+</HTML>

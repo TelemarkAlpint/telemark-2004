@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>NTNUI Telemark</title>
+<link rel="stylesheet" href="Style.css" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function NewWindow(mypage, myname, w, h, scroll) {
+var winl = 300;
+var wint = 300;
+winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars='+scroll+',resizable'
+win = window.open(mypage, myname, winprops)
+if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+}
+//  End -->
+</script>
+</head>
+
+<body target="_blank">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-family:Arial; font-size:8pt" bordercolor="#111111" width="600">
+    <tr>
+      <td width="205" height="183"><B>Skidestinasjoner</B>
+      <br>
+<LI><A HREF="http://www.vassfjellet.com" TARGET="_top" >Vassfjellet</A><br>
+<LI><A HREF="http://www.oppdal.com" TARGET="_top" >Oppdal</A><br>
+<LI><A HREF="http://www.meraker.com/" TARGET="_top" >Meråker</A><br>
+<LI><A HREF="http://www.areresort.se/" TARGET="_top" >&Aring;re</A><br>
+<LI><A HREF="http://home.sol.no/~torboe/liteare.htm" TARGET="_top" >&Aring;re News</A><br>
+<LI><A HREF="http://www.skiinfo.no/stranda/" TARGET="_top" >Stranda</A><br>
+<LI><A HREF="http://www.alperittet.com" TARGET="_top" >Alperittet</A><br>
+<LI><A HREF="http://www.skiinfo.no/roldal/" TARGET="_top" >Røldal</A><br>
+<LI><A HREF="http://www.hafjell.com" TARGET="_top" >Hafjell</A><br>
+<LI><A HREF="http://www.skiinfo.no/kvitfjell/" TARGET="_top" >Kvitfjell</A><br>
+<LI><A HREF="http://www.skiinfo.no/hemsedal" TARGET="_top" >Hemsedal</A><br>
+<LI><A HREF="http://www.narvikinfo.no" TARGET="_top" >Narvik</A><br>
+<LI><A HREF="http://www.trysilfjellet.no" TARGET="_top" >Trysilfjellet</A><br>
+<LI><A HREF="http://www.valdisere.com" TARGET="_top" >Val d'Isere</A><br>
+<LI><A HREF="http://www.chamonix.com" TARGET="_top" >Chamonix</A><br>
+<LI><A HREF="http://www.valthorens.com" TARGET="_top" >Val Thorens</A><br>
+<LI><A HREF="http://www.stantonamarlberg.com/" TARGET="_top" >St. Anton</A><br>
+<LI><A HREF="http://www.ischgl.at/" TARGET="_top" >Ischgl</A><br>
+<LI><A HREF="http://www.verbier.ch/" TARGET="_top" >Verbier</A><br>
+
+
+
+<br>
+
+
+	<b>Reise</b>
+<br>
+<li><a href="http://www.sts.se/alp/norway/" TARGET="_top" >STS Alpresor</a><br>
+<li><a href="http://www.langleytravel.no" TARGET="_top" >Langley Travel</a><br>
+<li><a href="http://www.sportreiser.no" TARGET="_top" >Sportreiser</a><br>
+<li><a href="http://feriemagasinet.no/turopperatorer.html" TARGET="_top" >Div. Turoperatører</a><br>
+<br>
+
+
+
+      </td>
+
+<td width="198" height="183">
+
+	<B>Diverse skilinker</B><br>
+<LI><A HREF="http://ski.telemarkcup.no/" TARGET="_top">Telemarkcupen !!!</A><br>
+<LI><A HREF="http://www.skiinfo.no/" TARGET="_top">Skiinfo</A><br>
+<LI><A HREF="http://www.skiinfo.no/var/var.phtml" TARGET="_top" >Væroversikten på Skiinfo</A><br>
+<LI><A HREF="http://www.skiinfo.no/weather/vis_vaer.php3?id=27" TARGET="_top">Været Vassfjellet</A><br>
+<LI><A HREF="http://www.skiinfo.no/weather/vis_vaer.php3?id=22"TARGET="_top" >Været Oppdal</A><br>
+<LI><A HREF="http://www.friflyt.no" TARGET="_top" >Fri Flyt</A><br>
+<LI><A HREF="http://home.sol.no/~bschulst/" TARGET="_top" >Telemarksiden</A><br>
+<LI><A HREF="http://home.sol.no/~tgunleik/" TARGET="_top" >Telemark-resultater</A><br>
+<LI><A HREF="http://www.BruktSport.com" TARGET="_top" >BruktSport</A><br>
+<LI><A HREF="http://www.duedalen.com" TARGET="_top" >Duedalen BigJump</A><br>
+<LI><A HREF="http://www.stk.a.se/" TARGET="_top" >Stockholms Telemarksklubb</A><br>
+<LI><A HREF="http://faculty.washington.edu/mtuggy/telepag1.htm" TARGET="_top" >Telemark Injuries</A><br>
+<LI><A HREF="http://www.telemarkforum.dk" TARGET="_top" >Telemarkforum Danmark</A><br>
+<LI><A HREF="http://skicentral.com/" TARGET="_top" >Skicentral</A><br>
+<LI><A HREF="http://www.goski.com/" TARGET="_top" >GoSki</A><br>
+<LI><A HREF="http://www.skinet.com" TARGET="_top" >Skinet</A><br>
+<LI><A HREF="http://www.offpiste.com" TARGET="_top" >Offpiste</A><br>
+<LI><A HREF="http://www.pumpapuder.nu" TARGET="_top" >PumpaPuder</A><br>
+<br>
+
+<B>Freestyle og New School</B>
+<BR>
+<LI><A HREF="http://www.freeridezone.com/index2.html" TARGET="_top">FreerideZone</a><br>
+<LI><A HREF="http://www.freeride.nu/" TARGET="_top" >Freeride.nu</A><br>
+<LI><A HREF="http://freeride.dk/" TARGET="_top" >Freeride.dk</A><br>
+<LI><A HREF="http://members.tripod.com/rantonline/" TARGET="_top" >Rant Online</A><br>
+<LI><A HREF="http://chartcom.net/ski/" TARGET="_top" >The Skiing Matrix</A><br>
+<LI><A HREF="http://www.freeskiers.org/" TARGET="_top" >FreeSkiers.org</A><br>
+<LI><A HREF="http://members.xoom.com/park_demon/" TARGET="_top" >The Stomping Grounds</A>
+
+
+
+
+      </td>
+
+<td width="197" height="183"><B>Stæsj!</B>
+<BR>
+<LI><A HREF="http://www.blackdiamondequipment.com/" TARGET="_top" >Black Diamond</A><br>
+<LI><A HREF="http://olinskis.com" TARGET="_top" >Olin Ski</A><br>
+<LI><A HREF="http://www.tuaski.com/" TARGET="_top" >Tua Ski</A><br>
+<LI><A HREF="http://www.salomonsports.com/" TARGET="_top" >Salomon</A><br>
+<LI><A HREF="http://www.rossignol.com/" TARGET="_top" >Rossignol</A><br>
+<LI><A HREF="http://www.rottefella.com/" TARGET="_top" >Rottefella</A><br>
+<LI><A HREF="http://www.linken.com/" TARGET="_top" >Linken Bindings</A><br>
+<LI><A HREF="http://www.scarpa.co.uk/" TARGET="_top" >Scarpa</A><br>
+<LI><A HREF="http://www.asolo.com/" TARGET="_top" >Asolo</A><br>
+<LI><A HREF="http://www.crispi.it/" TARGET="_top" >Crispi</A><br>
+<LI><A HREF="http://www.thenorthface.com/" TARGET="_top" >The North Face</A><br>
+<LI><A HREF="http://www.norrona.com/" TARGET="_top" >Norrøna</A><br>
+<LI><A HREF="http://www.marmot.com/" TARGET="_top" >Marmot</A><br>
+<LI><A HREF="http://www.kavu.com/" TARGET="_top" >Kavu klær</A><br>
+<LI><A HREF="http://www.shu.no/" TARGET="_top" >Skandinavisk Høyfjellsutstyr</A><br>
+<LI><A HREF="http://www.sportsnett.no" TARGET="_top" >Sportsnett</A><br>
+<br>
+
+
+<B>NTNUI</B>
+<BR>
+<LI><A HREF="http://www.stud.ntnu.no/studorg/ntnui/" TARGET="_top">Idrettslaget NTNUI</A><br>
+<LI><A HREF="http://www.stud.ntnu.no/studorg/skiofjel/" TARGET="_top" >NTNUI - Ski og fjellsportgruppa</A><br>
+<LI><A HREF="http://www.stud.ntnu.no/studorg/snowb/" TARGET="_top" >NTNUI - Snowboard</A><br>
+<LI><A HREF="http://www.stud.ntnu.no/studorg/tgnthi/" TARGET="_top" >NTNUI - Klatring</A><br>
+<LI><A HREF="http://www.stud.ntnu.no/studorg/koiene/" TARGET="_top" >NTNUI - Koiene</A><br>
+<LI><A HREF="http://www.stud.ntnu.no/studorg/hytta/" TARGET="_top" >Studenterhytta</A><br>
+<LI><A HREF="http://www.ntnu.no" TARGET="_top" >NTNU</A><br>
+<br>
+
+
+</td></tr>
+    </tr>
+    </table>
+  </center>
+</div>
+
+</body>
+</html>

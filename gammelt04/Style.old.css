@@ -1,0 +1,46 @@
+a:link
+{
+	color: rgb(255,0,0); 
+}
+a:visited
+{
+	color: rgb(255,0,0); 
+} 
+a:active 
+{
+	color: rgb(255,0,0);
+}
+a:hover
+{
+	color: #FF9999;
+	
+}
+a
+{
+	font-size: 8pt;
+	font-weight: bold;
+	font-family: Arial;
+	text-decoration: none;
+}
+p
+{
+		font-size: 8pt;
+		font-family: Arial;
+}
+	
+center
+{
+		font-size: 8pt;
+		font-family: Arial;
+}
+
+div
+{
+		font-size: 8pt;
+		font-family: Arial;
+}
+
+body
+{
+	color: rgb(98,82,82);
+}

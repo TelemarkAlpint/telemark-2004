@@ -1,0 +1,28 @@
+a:link
+{
+	color: #000080;font-size:12pt; font-weight:bold 
+}
+a:visited
+{
+	color: rgb(255,0,0); 
+} 
+a:active 
+{
+	color: rgb(255,0,0);
+}
+a:hover
+{
+	color: #FF9999;
+	
+}
+a
+{
+	font-size: 12pt;
+	font-weight: bold;
+	font-family: Arial;
+	text-decoration: none; font-style:oblique
+}
+body
+{
+	color: rgb(98,82,82);
+}

@@ -1,0 +1,104 @@
+<HTML>
+  <HEAD>
+	 <TITLE>NTNUI Telemark</TITLE>
+	 <LINK REL="stylesheet" HREF="../style.css" TYPE="text/css">
+  </HEAD>
+  <BODY>
+   <form method="POST" action="index.php">
+     <table border=0 cellpadding=0 bordercolor=#524545 cellspacing=0 width=100%>
+       <tr>
+         <td width="20%"><p><b>Navn:</b></td>
+	  	<td  colspan="2" width="80%"><input type="text" name="navn" size="20"></td>
+       </tr><tr>
+	 <td><b>E-post:</b></td>
+		<td colspan="2"><input type="text" name="epost" size="20"></td>
+       </tr><tr>
+	 <td><b>Annet:</b></td>
+	  	<td colspan="2"><input type="text" name="annet" size="20"></td>
+       </tr><tr>
+	 <td><b>Passord*:</b></td>
+	  	<td width="20%"><input type="password" name="passord" size="20"></td>
+	  	<td width="60%" align="center">
+	  		<input type="submit" value="Fjern" name="add">
+	  		<input type="submit" value="Legg til" name="add">
+	  	</td>
+       </tr><tr>
+  	 <td colspan="3"><small><a href="passord.php">Glemt passord?</a></small><hr></td>
+       </tr>
+     </table>
+   </form>
+  
+  <table border=0 cellpadding=0 bordercolor=#524545 cellspacing=0 width=100%>
+  <tr>
+    <td width = "5%"><b>Nr</b></td>
+    <td width = "30%"><b>Navn</b></td>
+    <td width = "30%"><b>E-post</b></td>
+    <td width = "35%"><b>Annet</b></td>
+  </tr>
+<?php
+include('clsencrypt.php');
+include('klasser.php');
+include('deklarer.php');
+$medlemmer = new Pameldt();
+
+#kryptering
+#$enc = new Encryption;
+$nyPerson = new Person($navn, $epost, $annet, $enc->encrypt($key, $passord));
+
+#legger til ny person fra inndata
+$treff = $medlemmer->finnesPerson($navn, $epost);
+if ($add == "Legg til") {
+	if (strrchr($epost, "@") == false ||
+	    strrchr($epost, ".") == false){
+	    	$epost = "";
+	}
+	if($navn != "" &&
+	   $epost != "" &&
+	   $passord != "" &&
+	   !$treff){
+		$medlemmer->leggTil($nyPerson);
+	}
+	else{
+		if ($treff) {
+			echo "<p><font color=\"red\">Personen er allerede registrert</font></p>\n";
+		}
+		else {
+			if($navn != "" ||
+			   $epost != "" ||
+			   $passord != ""){
+			print "<p><font color=red>Du har ikke tastet inn alle verdier som trengs for registrering.</font></p>\n<p><font color=red>Vennligst fyll inn:\n<ul>\n";
+			if ($navn == "") echo "  <li>navn</li>\n";
+			if ($epost == "") echo "  <li>epost</li>\n";
+			if ($passord == "") echo "  <li>passord</li>\n";
+			echo "<ul>\n</font></p>\n";
+			}
+		}
+	}
+}
+$index = $medlemmer->finn($navn, $passord);
+if ($add == "Fjern"){
+	if($navn != "" &&
+	   $passord != "" &&
+	   $index > -1){
+		$medlemmer->slett($index);
+		echo "<p><font color=red><i>", $navn, "</i> er slettet fra listen</font></p>";
+	}
+	else {
+		echo "<p><font color=red><i>", $navn, "</i> er ikke slettet. Navn eller passord er feil!</font></p>";
+	}
+	
+}
+
+
+
+
+$medlemmer->skrivUt();
+
+?>
+  </table>
+
+<p><hr><small>Dette er en påmeldingsliste for NTNUI Telemark/Alpint. Du kan slette å legge deg til så mange ganger du vil innen fristen. For å slette seg selv må du taste samme navn og passord som ved registrering.</small></p>
+<p><small>*Du må ikke glemme passordet hvis du vil ha mulighet til å melde deg av listen seinere. Det er ingen måte å få vite passordet på et seinere tidspunkt.</small></p>
+</body>
+</html>
+

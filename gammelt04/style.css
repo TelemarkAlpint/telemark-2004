@@ -1,0 +1,52 @@
+A:link {
+	COLOR: rgb(0,0,255)
+}
+A:visited {
+	COLOR: rgb(0,0,255)
+}
+A:active {
+	COLOR: rgb(0,0,255)
+}
+A:hover {
+	COLOR: #9999ff
+}
+
+A {
+	FONT-WEIGHT: 800;
+	TEXT-DECORATION: none
+}
+
+h1 {
+	font-size: 12pt;
+}
+
+BODY, TD, P, DIV {
+	font-family : Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	COLOR: rgb(52,45,45);
+}
+BODY, .back{
+	background-color: #DBDEFE;
+}
+
+
+.sponsor {
+	height: 50 pt;
+	align: left;
+	valign: top;
+
+}
+.vanligTabell {
+	height: 15 pt;
+	align: left;
+	valign: top;
+}
+
+.meny {
+	FONT-WEIGHT: bold;
+	font-variant: small-caps;
+	line-height: 150%;
+	font-size: 12pt;
+}
+
+fikse høyden på tabeller
