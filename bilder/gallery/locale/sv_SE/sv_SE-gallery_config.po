@@ -33,7 +33,7 @@ msgstr ""
 "Last-Translator: Peter Liversten <skansberget@telia.com>\n"
 "Language-Team: Swedish <crille@swipnet.se>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 # konfiguration är inget bra svenskt ord. Har någon något bättre förslag?

@@ -13,7 +13,7 @@ $file = fopen("count.txt", "w+");
 $Today = (date ("l dS of F Y ( h:i:s A )",time()));
 fwrite($file, "count=".$count[1]);
 fclose($file);
-print "<font size=1>Besøk siden 12. nov 04:</font><br><b>".$count[1];
+print "<font size=1>BesÃ¸k siden 12. nov 04:</font><br><b>".$count[1];
 ?></b></p>
 </body>
 </html>

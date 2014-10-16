@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 6.0::19990601::extensions to HTML 4.0//EN" "hmpro6.dtd">
 <HTML> 
   <HEAD>
-	 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+	 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 	 <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (WinNT; I) [Netscape]"> 
 	 <TITLE>Markedsplassen</TITLE>
 	 <LINK REL="stylesheet" TYPE="text/css" HREF="telemarkgruppa.css"> 

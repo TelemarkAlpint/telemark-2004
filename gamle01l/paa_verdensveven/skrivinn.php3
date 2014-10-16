@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 6.0::19990601::extensions to HTML 4.0//EN" "hmpro6.dtd">
 <HTML> 
   <HEAD>
-	 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1"> 
+	 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"> 
 	 <TITLE>Skriv inn til sladdrespalten</TITLE> <STYLE TYPE="text/css">
   <!--
     A          { font-family: "verdana, arial"; text-shadow: "black"  }

@@ -33,7 +33,7 @@ msgstr ""
 "Last-Translator: M. van der Kolk <internet@vanderkolk.demon.nl>\n"
 "Language-Team: Dutch M. van der Kolk <internet@vanderkolk.demon.nl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../add_comment.php:28 ../add_photos.php:27 ../album_permissions.php:28

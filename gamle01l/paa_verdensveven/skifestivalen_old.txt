@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
  
    <TITLE>Skifestivalen 2000</TITLE>
 
@@ -39,8 +39,8 @@ Gj&oslash;r deg klar for &aring;rets desidert st&oslash;rste happening!<br><br>
 <font style="font-family: Verdana, Arial; font-size: 10pt">
 Fredag 25 februar til s&oslash;ndag 27 inviterer NTNUI Telemark og Norsk Studentes Idrettsforening 
 til student mesterskap (SM) i Parallellslalom, Storslalom og Chineese Downhill p&aring; Gr&aring;kallen. 
-Videre smeller det løs med Klassisk telemarkrenn, BigJump, afterski på Bajazzo, 
-bankett på Sing. og mye mye mer! Da dropper vi alle hemninger og har det skikkelig 
+Videre smeller det lÃ¸s med Klassisk telemarkrenn, BigJump, afterski pÃ¥ Bajazzo, 
+bankett pÃ¥ Sing. og mye mye mer! Da dropper vi alle hemninger og har det skikkelig 
 morro p&aring; ski - alle som en - 
 p&aring; <i>alle ferdighetsniv&aring;er!</i> 
 Det blir festing og morro til langt p&aring; natt, uh&oslash;ytidelige konkurranser,
@@ -55,24 +55,24 @@ og mye fin skikj&oslash;ring!<br>
 <b>Fredag:</b>  <br>
 1000 - Klassisk  <br>
 1300 - Parallell (SM)<br>
-1700 - Afterskien starter på Bajja<br>
+1700 - Afterskien starter pÃ¥ Bajja<br>
 <br>
-<b>Lørdag:</b> <br>
+<b>LÃ¸rdag:</b> <br>
 0930 - Storslalom (SM)<br>
 1400 - BigJump<br>
-1900 - Bankett på Singsaker Studenthjem.<br>
+1900 - Bankett pÃ¥ Singsaker Studenthjem.<br>
 <br>
-<b>Søndag:</b><br>
+<b>SÃ¸ndag:</b><br>
 1300 - Chineese Downhill (SM)<br>
 ???? - Avsluttning<br><br>
 
 <hr color="#BBBBBB"><br>
 <font style="font-family: Verdana, Arial; font-size: 12pt">
-<b>Påmelding</b><br><br>
+<b>PÃ¥melding</b><br><br>
 </font>
-Påmeldingen er nå ferdig - men det kan være muligheter for å få være med
-på noen renn lørdag eller søndag. Meld deg til sekreteriatet oppe på gråkallen ,
- -så skal vi se hva vi kan gjøre! (Pris er 50,- pr. renn)
+PÃ¥meldingen er nÃ¥ ferdig - men det kan vÃ¦re muligheter for Ã¥ fÃ¥ vÃ¦re med
+pÃ¥ noen renn lÃ¸rdag eller sÃ¸ndag. Meld deg til sekreteriatet oppe pÃ¥ grÃ¥kallen ,
+ -sÃ¥ skal vi se hva vi kan gjÃ¸re! (Pris er 50,- pr. renn)
 <br><br>
 
 <hr color="#BBBBBB"><br>
@@ -88,8 +88,8 @@ Busstider finner du <a href="skifestivalen_busser.html" style="font-family: Verd
 <b>Hva er skifestivalen?</b><br>
 </font>
 Skifestivalen er et tradisjonsrikt arrangement i regi av Telemarkgruppa. 
-Arrangementet er like gammelt som gruppa, årets arrangement er derfor det 14. i rekken. 
-Skifestivalen er det naturlige høydepunktet for alle arrangementene til Telemarkgruppa.
+Arrangementet er like gammelt som gruppa, Ã¥rets arrangement er derfor det 14. i rekken. 
+Skifestivalen er det naturlige hÃ¸ydepunktet for alle arrangementene til Telemarkgruppa.
 <br><br>
 <b>Eventuelle sp&oslash;rsm&aring;l kan rettes til:<br></b>
 <a href="mailto:woxen@stud.ntnu.no" style="font-family: Verdana, Arial; font-size: 10pt"><b>Line</b></A> (General)<br>

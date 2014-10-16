@@ -31,7 +31,7 @@ msgstr ""
 "Last-Translator: Johan Speybrouck <jspeybro@p311.vub.ac.be>\n"
 "Language-Team: Dutch <jspeybro@p311.vub.ac.be>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../errors/configmode.php:10

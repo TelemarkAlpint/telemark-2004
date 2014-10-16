@@ -5,39 +5,39 @@
 <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Legge til Telemarksgruppa sin katalog under eget hjemmeområde</title>
+<title>Legge til Telemarksgruppa sin katalog under eget hjemmeomrÃ¥de</title>
 </head>
 
 <body>
 
-<p><b>Koble seg til Telemarksgruppa sitt webområde i Windows<br>
-</b>Får å kunne legge ut filer på Telemarksgruppen sitt område må du ha tilgang 
-til området. Den eneste personen som kan gi deg tilgang er administrator til 
-sidene som alltid er websjefen i gruppen. Det er for tiden meg. Det du gjør er å 
-spørre meg pent om du kan få tilgang, og hvorfor du vil ha det. Det er ikke alle 
-som får tilgang. Det er kun folk som jeg kan være sikker på ikke gjør noe tull 
-med gruppas filer. Det vil med andre ord si at du ikke vil få tilgang hvis jeg 
+<p><b>Koble seg til Telemarksgruppa sitt webomrÃ¥de i Windows<br>
+</b>FÃ¥r Ã¥ kunne legge ut filer pÃ¥ Telemarksgruppen sitt omrÃ¥de mÃ¥ du ha tilgang 
+til omrÃ¥det. Den eneste personen som kan gi deg tilgang er administrator til 
+sidene som alltid er websjefen i gruppen. Det er for tiden meg. Det du gjÃ¸r er Ã¥ 
+spÃ¸rre meg pent om du kan fÃ¥ tilgang, og hvorfor du vil ha det. Det er ikke alle 
+som fÃ¥r tilgang. Det er kun folk som jeg kan vÃ¦re sikker pÃ¥ ikke gjÃ¸r noe tull 
+med gruppas filer. Det vil med andre ord si at du ikke vil fÃ¥ tilgang hvis jeg 
 ikke kjenner deg.</p>
 
-<p><b>Mappe opp Telemarksgruppa sitt webområde i Windows<br>
-</b>Min datamaskin <b>- </b>Verktøy - koble til nettverksstasjon. I ruten <code>mappe</code> skriver du:</p>
+<p><b>Mappe opp Telemarksgruppa sitt webomrÃ¥de i Windows<br>
+</b>Min datamaskin <b>- </b>VerktÃ¸y - koble til nettverksstasjon. I ruten <code>mappe</code> skriver du:</p>
 
-<p>Gruppas webområde (anbefales pga at det settes riktige rettigheter på filene 
+<p>Gruppas webomrÃ¥de (anbefales pga at det settes riktige rettigheter pÃ¥ filene 
 med en gang):<br>
 <code>\\sambaad.stud.ntnu.no\groupswww\telemark</code></p>
 
-<p>Gruppeområde (anbefales ikk):<code><br>
+<p>GruppeomrÃ¥de (anbefales ikk):<code><br>
 \\sambaad.stud.ntnu.no\groups\telemark</code></p>
 
-<p>Sitter du ikke på egen pc bør du ikke merke av for <code>Koble til på nytt. </code>
-Når denne er krysset av vil Windows koble til denne stasjonen neste gang pc'en 
-skrus på også. Det er liten vits på en datasal.</p>
+<p>Sitter du ikke pÃ¥ egen pc bÃ¸r du ikke merke av for <code>Koble til pÃ¥ nytt. </code>
+NÃ¥r denne er krysset av vil Windows koble til denne stasjonen neste gang pc'en 
+skrus pÃ¥ ogsÃ¥. Det er liten vits pÃ¥ en datasal.</p>
 
 <p>Brukernavn: <code>WIN-NTNU-NO/(brukernavn)</code><br>
 Passord: <code>(passord) </code></p>
 
-<p>Du må være tilknyttet NTNU sitt nettverk for å kunne mappe opp disse 
-nettverksstasjonene. Det kan gjøre på to måter:</p>
+<p>Du mÃ¥ vÃ¦re tilknyttet NTNU sitt nettverk for Ã¥ kunne mappe opp disse 
+nettverksstasjonene. Det kan gjÃ¸re pÃ¥ to mÃ¥ter:</p>
 
 <ul>
   <li>Sitte fysisk med nettverkskabelen i NTNU</li>
@@ -46,48 +46,48 @@ nettverksstasjonene. Det kan gjøre på to måter:</p>
   infoweb.ntnu.no</a></li>
 </ul>
 
-<p><b>Å legge til Telemarksgruppa sin katalog under eget hjemmeområde anbefales 
+<p><b>Ã… legge til Telemarksgruppa sin katalog under eget hjemmeomrÃ¥de anbefales 
 ikke<br>
 </b>Kommandoen</p>
 
 <p><code>:~$ ln -s home/groups/telemark/public_html telemark</code></p>
-<p>i unix (SSH) anbefales ikke. Det vil nå opprettes en link fra ditt område. Denne metoden vil gi feil rettighetene på alle 
-filene som opprettes pga av at du går inn via serveren:&nbsp; <code>groups
+<p>i unix (SSH) anbefales ikke. Det vil nÃ¥ opprettes en link fra ditt omrÃ¥de. Denne metoden vil gi feil rettighetene pÃ¥ alle 
+filene som opprettes pga av at du gÃ¥r inn via serveren:&nbsp; <code>groups
 </code>og ikke:<code> groupswww</code> . 
-Standardinstillingene på serveren <code>groupswww</code> er forskjellig fra <code>groups</code>. 
-Det er derfor du bør bruke serveren <code>groupswww</code> når du skal legge 
-filer på nettet og serveren <code>groups </code>når du skal ha dem på eget 
-område</p>
+Standardinstillingene pÃ¥ serveren <code>groupswww</code> er forskjellig fra <code>groups</code>. 
+Det er derfor du bÃ¸r bruke serveren <code>groupswww</code> nÃ¥r du skal legge 
+filer pÃ¥ nettet og serveren <code>groups </code>nÃ¥r du skal ha dem pÃ¥ eget 
+omrÃ¥de</p>
 <p><b>Lage ny bildeside:<br>
-</b>Opprett ny mappe i katalogen /bilder/ under gruppas webområde. Katalogen skal 
-hete: ##_(et-ords-beskrivelse)årstall. Der ## er neste tall i rekken av 
+</b>Opprett ny mappe i katalogen /bilder/ under gruppas webomrÃ¥de. Katalogen skal 
+hete: ##_(et-ords-beskrivelse)Ã¥rstall. Der ## er neste tall i rekken av 
 eksistrende kataloger. F.eks:<br>
 <code>bilder/01_Skifestivalen04/<br>
 bilder/02_Oppdal04/</code></p>
 <p>Legg disse filene inn i katalogen du nettopp opprettet:<br>
 <code>bilder.swf<br>
 bilder.txt</code></p>
-<p>Du må også gå inn i filen <b><font color="#FF0000">bilder.htm</font></b> å 
-legge til link til den nye bildeserien din! Åpne filen i Notepad, Tekstpad eller Frontpage. Ikke Word eller 
-OpenOffice.org fordi disse programmene legger til så mye uforståelig kode som 
-gjør det vanskelig for andre som kommer etter deg.</p>
-<p>Søk etter teksten som genererer linken til forrige bildeserie. Den kan f.eks 
+<p>Du mÃ¥ ogsÃ¥ gÃ¥ inn i filen <b><font color="#FF0000">bilder.htm</font></b> Ã¥ 
+legge til link til den nye bildeserien din! Ã…pne filen i Notepad, Tekstpad eller Frontpage. Ikke Word eller 
+OpenOffice.org fordi disse programmene legger til sÃ¥ mye uforstÃ¥elig kode som 
+gjÃ¸r det vanskelig for andre som kommer etter deg.</p>
+<p>SÃ¸k etter teksten som genererer linken til forrige bildeserie. Den kan f.eks 
 se slik ut:<code><br>
 &lt;p&gt;&lt;br&gt;&lt;a href =&quot;01_skifestivalen04/bilder.swf&quot;&gt;Skifestivalen 
 2004&lt;/a&gt;&lt;/p&gt;</code></p>
 <p>Kopier hele linjen, eller akkuart bare det du trenger, og lim dette inn i en 
-ny linje slik at den kommer neste i rekken. Så endrer du:<br>
+ny linje slik at den kommer neste i rekken. SÃ¥ endrer du:<br>
 <code>01_skifestivelen04 </code>til det du kalte katalogen din! (<code>bilder.swf</code> vil 
-ligge under din katalog også...)<br>
-<code>Skifestivalen 2004 </code>til det du vil skal synes på internettsiden</p>
+ligge under din katalog ogsÃ¥...)<br>
+<code>Skifestivalen 2004 </code>til det du vil skal synes pÃ¥ internettsiden</p>
 <p>Ellers blir det tilsvarende som &quot;Legge inn bilder i eksisterende bildeserie&quot;</p>
 <p><b>Legge inn bilder i eksisterende bildeserie<br>
 </b>Legg inn alle filene dine i katalogen. Det er kunn jpg-bilder som godtas. Alle bildene i katalogen skal nummereres fra 
 <u>1.jpg</u> (ikke 
 1.jpeg, 0.jpg, 01.jpg eller 001.jpg) og oppover. Det er viktig at filnavnet bare er et tall og at 
 det ikke er noen annen tekst i filen. Dette er en forutsetning for at programmet 
-finner filen. Fortsett din nummerering videre fra nummeret på det siste bildet 
-som allerede ligger i katalogen uten å hoppe over et tall. Dvs hvis de siste bildene i katalogen er f.eks:</p>
+finner filen. Fortsett din nummerering videre fra nummeret pÃ¥ det siste bildet 
+som allerede ligger i katalogen uten Ã¥ hoppe over et tall. Dvs hvis de siste bildene i katalogen er f.eks:</p>
 <p>
 <code>1.jpg<br>
 2.jpg<br>
@@ -100,30 +100,30 @@ som allerede ligger i katalogen uten å hoppe over et tall. Dvs hvis de siste bil
 25.jpg<br>
 ...osv</code></p>
 <p><b>Innstillinger i filen &quot;bilder.txt&quot;<br>
-</b>Du må endre filen <code>bilder.txt</code> for at programmet skal finne bildene dine. 
-Du må spesifisere siste bilde i katalogen, hvilke bilder du har tatt og legge en 
-liten tekstkommentar til hvert enkelt bilde. Det må gjøres eksakt slik det står 
-beskrevet for at programmet skal skjønne noe av det. Det forstår svært lite og 
-er ikke veldig medgjørlig.</p>
+</b>Du mÃ¥ endre filen <code>bilder.txt</code> for at programmet skal finne bildene dine. 
+Du mÃ¥ spesifisere siste bilde i katalogen, hvilke bilder du har tatt og legge en 
+liten tekstkommentar til hvert enkelt bilde. Det mÃ¥ gjÃ¸res eksakt slik det stÃ¥r 
+beskrevet for at programmet skal skjÃ¸nne noe av det. Det forstÃ¥r svÃ¦rt lite og 
+er ikke veldig medgjÃ¸rlig.</p>
 <p><i><code>&quot;antallfiler&quot;</code></i><br>
-Tallet på den siste fila som ligger i katalogen, skal legges inn i.</p>
+Tallet pÃ¥ den siste fila som ligger i katalogen, skal legges inn i.</p>
 <p><i><code>&quot;fotografer&quot;</code></i><br>
-Ditt navn vil vises på de bildene du har tatt. Det spesifiseres vha første og siste bilde 
+Ditt navn vil vises pÃ¥ de bildene du har tatt. Det spesifiseres vha fÃ¸rste og siste bilde 
 som du har tatt. Det kan legges inn flere fotografer i samme serie. Da legges 
 alle fotografene etter hverandre slik: <code>[...][...][...]</code>. Det er viktig at bildene 
 ikke overlapper her. Da er det den fotografen som er listet opp sist som 
 &quot;vinner&quot;. 
-Rekkefølgen på disse tegnene er viktig <code>[(-)()]</code>. Programmet søker helt til de 
+RekkefÃ¸lgen pÃ¥ disse tegnene er viktig <code>[(-)()]</code>. Programmet sÃ¸ker helt til de 
 finner de riktige tegnene. Er det feil her, vises ikke fotografens navn.</p>
 <p><i><code>&quot;bilde&quot;</code></i><br>
-Du skal også legge inn forklaringer til hvert enkelt bilde. Programmet funker 
-ute forklaringene, men det er mye morsommere å se på bildene når man har en 
-liten tekst inntil. Det er ikke lange setningen du får plass til, så sjekk at 
-tekstene ikke er for lange når du er ferdig. Det gjør du ved å starte programmet 
+Du skal ogsÃ¥ legge inn forklaringer til hvert enkelt bilde. Programmet funker 
+ute forklaringene, men det er mye morsommere Ã¥ se pÃ¥ bildene nÃ¥r man har en 
+liten tekst inntil. Det er ikke lange setningen du fÃ¥r plass til, sÃ¥ sjekk at 
+tekstene ikke er for lange nÃ¥r du er ferdig. Det gjÃ¸r du ved Ã¥ starte programmet 
 fra nettsiden.</p>
 <p>Slik ser filen ut:<br>
 <code>-------bilder.txt---------------------------------<br>
-antallfiler=(her skal tallet på siste bilde settes inn)&amp; (</code>dette 
+antallfiler=(her skal tallet pÃ¥ siste bilde settes inn)&amp; (</code>dette 
 &amp;-tegnet her er viktig!)<code><br>
 &amp;fotografer=[(start-slutt)(navnet ditt)]<br>
 &amp;bilde1=(forklaring til bilde 1)<br>
@@ -131,11 +131,11 @@ antallfiler=(her skal tallet på siste bilde settes inn)&amp; (</code>dette
 &amp;bilde3=(forklaring til bilde 3)<br>
 osv...</code></p>
 <p>
-<code>-------slutt på fila------------------------------</code></p>
+<code>-------slutt pÃ¥ fila------------------------------</code></p>
 
-<p><b>Sette rettigheter på filene<br>
-</b>Gjør det til en vane å sjekke rettigheter på filene. Det går ikke i &quot;Min datamaskin&quot;. 
-Det må gjøres vha SSH:</p>
+<p><b>Sette rettigheter pÃ¥ filene<br>
+</b>GjÃ¸r det til en vane Ã¥ sjekke rettigheter pÃ¥ filene. Det gÃ¥r ikke i &quot;Min datamaskin&quot;. 
+Det mÃ¥ gjÃ¸res vha SSH:</p>
 
 <p><i>F-Secure SSH File Transfer:<br>
 </i>Logg deg inn i SSH:<br>
@@ -143,15 +143,15 @@ Stikkord:<br>
 -F-Secure SSH client<br>
 -Quick connect<br>
 -host: login.stud.ntnu.no, port: 22<br>
-for nærmere informasjon se infoweb.ntnu.no</p>
+for nÃ¦rmere informasjon se infoweb.ntnu.no</p>
 
 <p>naviger til gruppas webkatalog! Skriv:<br>
 <code>/home/groups/telemark/public_html</code></p>
 
-<p>i boksen der det står noe sånt som:<code><br>
+<p>i boksen der det stÃ¥r noe sÃ¥nt som:<code><br>
 /home/others/homeo/(**)/(brukernavn)</code></p>
 
-<p>Høyreklikk på katalogen hvor bildene dine ligger!<br>
+<p>HÃ¸yreklikk pÃ¥ katalogen hvor bildene dine ligger!<br>
 Trykk Properties!</p>
 
 <p>Kryss av for &quot;prosess files and subfolders in a folder&quot;</p>
@@ -164,20 +164,20 @@ Clear bit mask: 002</p>
 </i>logg inn!<br>
 :~$ cd /home/groups/telemark/public_html <br>
 :~$ cd bilder<br>
-:~$ chmod 775 katalognavn (setter rettigheter på katalogen)<br>
+:~$ chmod 775 katalognavn (setter rettigheter pÃ¥ katalogen)<br>
 :~$ cd katalognavn<br>
-:~$ chmod 775 *.* (setter rettigheter på alle filene i katalogen)</p>
+:~$ chmod 775 *.* (setter rettigheter pÃ¥ alle filene i katalogen)</p>
 
-<p><b>FERDIG / DET GÅR IKKE<br>
-</b>Nå skal det i prisippet fungere! Et godt tips er å se på eksisterende 
-kataloger og filer å herme etter det! Hvis du ikke får det til legger du inn 
-filene på gruppas område og ber meg fikse det. Før du gjør det finner du filen 
+<p><b>FERDIG / DET GÃ…R IKKE<br>
+</b>NÃ¥ skal det i prisippet fungere! Et godt tips er Ã¥ se pÃ¥ eksisterende 
+kataloger og filer Ã¥ herme etter det! Hvis du ikke fÃ¥r det til legger du inn 
+filene pÃ¥ gruppas omrÃ¥de og ber meg fikse det. FÃ¸r du gjÃ¸r det finner du filen 
 &quot;bilder.txt&quot; (kopierer en som allerede eksistrer) og skriver inn kommentarer til 
-alle bildene, så jeg slipper å gjøre det. Den fila sender du til meg på mail. Du 
-kan evt kopiere hele teksten hvis du ikke gidder å sende med hele filen.</p>
+alle bildene, sÃ¥ jeg slipper Ã¥ gjÃ¸re det. Den fila sender du til meg pÃ¥ mail. Du 
+kan evt kopiere hele teksten hvis du ikke gidder Ã¥ sende med hele filen.</p>
 
-<p>Ellers hvis det er noe som ikke virker så si fra så skal jeg se hva jeg kan 
-gjøre!</p>
+<p>Ellers hvis det er noe som ikke virker sÃ¥ si fra sÃ¥ skal jeg se hva jeg kan 
+gjÃ¸re!</p>
 
 </body>
 

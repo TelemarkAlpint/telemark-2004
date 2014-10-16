@@ -1,9 +1,9 @@
 antallfiler=13&
 &bilde1=Ankomst hytta
 &bilde2=knuffing
-&bilde3=slåssing
+&bilde3=slÃ¥ssing
 &bilde4=Hjemreise
-&bilde5=Drekka øl i bilen på vei hæim
+&bilde5=Drekka Ã¸l i bilen pÃ¥ vei hÃ¦im
 &bilde6=
 &bilde7=
 &bilde8=
