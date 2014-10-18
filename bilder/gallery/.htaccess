@@ -17,17 +17,16 @@ php_flag session.bug_compat_warn off
 </IfModule>
 
 Options -Indexes +FollowSymLinks
-<IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /groups/telemark/bilder/gallery/
+RewriteBase /bilder/gallery/
+
 
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^\.\?/]+)/([0-9]+)$	/groups/telemark/bilder/gallery/view_photo.php?set_albumName=$1&index=$2	[QSA]
+RewriteRule ^([^\.\?/]+)/([0-9]+)$	/bilder/gallery/view_photo.php?set_albumName=$1&index=$2	[QSA]
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^\.\?/]+)/([A-Za-z_0-9\-]+)$	/groups/telemark/bilder/gallery/view_photo.php?set_albumName=$1&id=$2	[QSA]
+RewriteRule ^([^\.\?/]+)/([A-Za-z_0-9\-]+)$	/bilder/gallery/view_photo.php?set_albumName=$1&id=$2	[QSA]
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^\.\?/]+)/$	/groups/telemark/bilder/gallery/$1	[R]
+RewriteRule ^([^\.\?/]+)/$	/bilder/gallery/$1	[R]
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^\.\?/]+)$	/groups/telemark/bilder/gallery/view_album.php?set_albumName=$1	[QSA]
-</IfModule>
+RewriteRule ^([^\.\?/]+)$	/bilder/gallery/view_album.php?set_albumName=$1	[QSA]
 # END Gallery section.  Add User changes below this line
